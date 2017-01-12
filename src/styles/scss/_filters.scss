@@ -1,0 +1,38 @@
+.filter-container {
+	background-color: #eee;
+	padding: 15px;
+	margin: 20px 0 10px 0;
+	border-radius: $filter-border-radius;
+
+	&.negative-margin{
+		margin-top: -20px;
+	}
+
+	&.collapsed{
+		padding-bottom: 0px;
+	}
+
+	.filter-fields-container {
+		//overflow-x: visible !important;
+	}
+
+	.row {
+		display: flex;
+	}
+
+	.col {
+		margin-right: 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.flex{
+		flex: 1;
+	}
+
+	.btn-search {
+		width: 75px;
+	}
+}
