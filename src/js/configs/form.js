@@ -1,0 +1,3 @@
+const defaultValidate = () => ({})
+
+export { defaultValidate }

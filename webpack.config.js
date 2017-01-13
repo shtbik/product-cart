@@ -28,7 +28,7 @@ var plugins = [
 
 if( isProd ) plugins.push(new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}))
 
-const entry = isProd ? ['./src/index.js'] : ['webpack-hot-middleware/client', './src/index.js']
+const entry = isProd ? ['./src/js/index.js'] : ['webpack-hot-middleware/client', './src/js/index.js']
 
 module.exports = {
 
