@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import TopNav from './TopNav'
+import BreadCrumbs from './BreadCrumbs'
+import Footer from './Footer'
 // import { createSelector } from 'reselect'
-// const refreshInterval = 60000 * 1 // every minute
+// const refreshInterval = 300000 * 1 // every minute
 
 class App extends React.Component {
 
@@ -11,12 +14,17 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div id="wrapper">
-				<div id="page-wrapper" >
-					<div className="wrapper wrapper-content">
-						{this.props.children}
+			<div>
+				<TopNav/>
+				<div className="container main-container">
+					<BreadCrumbs/>
+					<div className="row">
+						<div className="col-sm-12 col-md-12">
+							{this.props.children}
+						</div>
 					</div>
 				</div>
+				<Footer/>
 			</div>
 		)
 	}

@@ -45,6 +45,7 @@
     "redux-storage-engine-localstorage": "^1.1.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4",
+    "semver-compare": "^1.0.0",
     "shallowequal": "^0.2.2"
   },
   "devDependencies": {

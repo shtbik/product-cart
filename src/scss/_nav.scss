@@ -1,0 +1,43 @@
+
+
+.navbar {
+	min-height: 10vh;
+
+	.navbar-brand {
+
+		img {
+			height: 40px;
+		}
+	}
+
+	&.navbar-light {
+
+		.navbar-nav {
+
+			.nav-link {
+				
+				&.on {
+					color: rgba(0, 0, 0, 0.9);
+				}
+			}
+		}
+	}
+
+	.profile {
+		
+		> li {
+
+			&:first-child {
+				margin-right: 15px;
+
+				a {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	min-height: 10vh;
+}

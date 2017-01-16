@@ -1,8 +1,7 @@
-import { createStore, compose } from 'redux'
-// import { createStore, applyMiddleware, compose } from 'redux'
-// import thunkMiddleware from 'redux-thunk'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunkMiddleware from 'redux-thunk'
 // import createLogger from 'redux-logger'
-// import storageMiddleware from './localStorage'
+import storageMiddleware from './localStorage'
 import rootReducer from '../modules'
 import DevTools from '../containers/DevTools'
 
@@ -13,6 +12,7 @@ const middleware = compose(
 	// userLogger ?
 	// 	applyMiddleware(thunkMiddleware, storageMiddleware, loggerMiddleware)
 	// 		: applyMiddleware(thunkMiddleware, storageMiddleware)
+	applyMiddleware(thunkMiddleware, storageMiddleware),
 	DevTools.instrument()
 )
 

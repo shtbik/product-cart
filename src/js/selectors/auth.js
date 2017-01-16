@@ -34,6 +34,7 @@ const auth = {
 	},
 
 	requireAuth( nextState, replace ) {
+		// console.log(auth.loggedIn());
 		if (!auth.loggedIn()) {
 			replace({
 				pathname: '/auth',

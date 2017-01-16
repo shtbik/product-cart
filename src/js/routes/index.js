@@ -35,6 +35,7 @@ import NoMatch from '../components/NoMatch'
 
 import Auth from '../containers/Auth'
 import AuthLogin from '../containers/AuthLogin'
+import AuthRegistration from '../containers/AuthRegistration'
 // import Docs from '../containers/Docs'
 // import Test from '../containers/Test'
 // import TestIframe from '../containers/TestIframe'
@@ -83,8 +84,9 @@ const AuthRoutes = (
 	<Route path="/auth" component={Auth}>
 		<IndexRoute component={AuthLogin}/>
 		<Route path="/auth/login" component={AuthLogin}/>
+		<Route path="/auth/reg" component={AuthRegistration}/>
 	</Route>
 )
 const NoMatchRoute = (<Route path="*" component={NoMatch}/>)
 
-export { AppRoutes, NoMatchRoute, AuthRoutes }
+export { AppRoutes, AuthRoutes, NoMatchRoute }

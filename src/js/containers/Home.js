@@ -9,7 +9,13 @@ class Home extends Base {
 	render() {
 		// console.log(this.props.test)
 		return (
-			<div>Проект "Деловая оценка и аллокация"</div>
+			<div className="container">
+				<div className="row">
+					<div className="col-sm-12 col-md-12">
+						<h3 className="text-center">Проект "Оценка сотрудников и аллокация ресурсов по проектам"</h3>
+					</div>
+				</div>
+			</div>
 		)
 	}
 }
