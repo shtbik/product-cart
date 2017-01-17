@@ -56,4 +56,22 @@ body {
 	    } 
 		}
 	}
+
+	.profile {
+		margin-top: 14px;
+
+		.avatar {
+			width: 230px;
+			max-width: 100%;
+			height: 230px;
+		}
+
+		h6 {
+			margin-bottom: 20px;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+	}
 }

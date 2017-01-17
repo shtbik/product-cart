@@ -22,7 +22,6 @@ class AuthLogin extends React.Component {
 	}
 
 	render() {
-		console.log('asd');
 		const {handleSubmit, submitting} = this.props
 		return (
 			<div className="login">

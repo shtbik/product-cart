@@ -71,7 +71,7 @@ class TopNav extends Base {
 							</li>
 						</ul>
 						<span className="form-inline my-2 my-lg-0">
-							<ul className="nav profile">
+							<ul className="nav profile-widget">
 								<li>
 									<Link to="/profile" activeClassName="on" className="nav-link">
 										<i className="fa fa-user">&nbsp;</i> {userName}

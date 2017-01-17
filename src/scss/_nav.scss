@@ -23,9 +23,14 @@
 		}
 	}
 
-	.profile {
+	.profile-widget {
 		
 		> li {
+
+			a {
+				color: inherit;
+				cursor: pointer;
+			}
 
 			&:first-child {
 				margin-right: 15px;
@@ -40,4 +45,5 @@
 
 .footer {
 	min-height: 10vh;
+	line-height: 10vh;
 }

@@ -2,7 +2,9 @@ import React from 'react'
 import { IndexRoute, Route } from 'react-router'
 
 import App from '../containers/App'
-
+import Home from '../containers/Home'
+import Profile from '../containers/Profile'
+import Mark from '../containers/Mark'
 // import Users from '../containers/Users'
 // import Brokers from '../containers/Brokers'
 // import Partners from '../containers/Partners'
@@ -29,7 +31,7 @@ import App from '../containers/App'
 
 // import Grid from '../containers/Grid'
 // import Form from '../containers/Form/Page'
-import Home from '../containers/Home'
+
 // import SearchResults from '../containers/SearchResults'
 import NoMatch from '../components/NoMatch'
 
@@ -45,7 +47,8 @@ import {auth as authFunc} from '../selectors/auth'
 const AppRoutes = (
 	<Route path="/" component={App} onEnter={authFunc.requireAuth}>
 		<IndexRoute component={Home}/>
-
+		<Route path="profile" component={Profile}/>
+		<Route path="mark" component={Mark}/>
 		{ /* <Route path="user" component={UserPage}/>
 		<Route path="partner" component={PartnerPage}/>
 		<Route path="product" component={ProductPage}/>

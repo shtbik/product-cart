@@ -1,14 +1,13 @@
 import React from 'react'
 import moment from 'moment'
+import _ from 'lodash'
 import { FormattedMessage, FormattedDate } from 'react-intl'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table'
-
 
 class BootstrapTablePreset extends React.Component {
 
 	static get defaultProps() {
 		return {
-			
 			data: [],
 			columns: [],
 			bordered: false,
@@ -18,17 +17,15 @@ class BootstrapTablePreset extends React.Component {
 			hover: true,
 			condensed: false,
 			options: {
-				//sizePerPage: 20,
+				// sizePerPage: 20,
 				sizePerPageList: [5, 10, 20, 100],
 				hideSizePerPage: true
-				//sizePerPageList: [{text: 5, value: 5}, {text: 20, value: 20}]	
+				// sizePerPageList: [{text: 5, value: 5}, {text: 20, value: 20}]
 			}
-			
 		}
 	}
 
-	renderDefaultColumn( config ){
-
+	renderDefaultColumn(config) {
 		const defaults = {
 			dataSort: true,
 			dataAlign: 'left',
@@ -38,7 +35,7 @@ class BootstrapTablePreset extends React.Component {
 		const props = Object.assign({}, defaults, config)
 		const messageId = `labels.${props.label || props.dataField}`
 
-		if( props.width ) props.width += '' // width, apparently, has to be a string ¯\_(ツ)_/¯
+		if (props.width) props.width += '' // width, apparently, has to be a string ¯\_(ツ)_/¯
 
 		return (
 			<TableHeaderColumn {...props}>
@@ -47,42 +44,37 @@ class BootstrapTablePreset extends React.Component {
 		)
 	}
 
-	renderBooleanColumn( config ){
-
+	renderBooleanColumn(config) {
 		const defaults = {
 			dataSort: true,
 			dataAlign: 'center',
 			width: 75,
-			dataFormat: ( cell, row ) => {
-				var icon = !cell ? 'times-circle' : 'check-circle'
-				var color = !cell ? 'red' : 'green'
+			dataFormat: ( cell ) => {
+				const icon = !cell ? 'times-circle' : 'check-circle'
+				const color = !cell ? 'red' : 'green'
 				return <i style={{color: color}} className={`fa fa-${icon}`}></i>
 			}
 		}
 
 		const props = Object.assign({}, defaults, config)
-
 		return this.renderDefaultColumn( props )
 	}
 
-	
-	renderDateColumn( config ){
-
+	renderDateColumn(config) {
 		const defaults = {
 			dataSort: true,
 			dataAlign: 'right',
 			width: 100,
-			dataFormat: ( cell, row ) => {
+			dataFormat: ( cell ) => {
 				return <FormattedDate value={moment(cell).toDate()} />
 			}
 		}
 
 		const props = Object.assign({}, defaults, config)
-
 		return this.renderDefaultColumn( props )
 	}
 
-	renderIndexColumn( config ){
+	renderIndexColumn(config) {
 		const defaults = {
 			dataSort: true,
 			dataAlign: 'right',
@@ -91,65 +83,56 @@ class BootstrapTablePreset extends React.Component {
 		}
 
 		const props = Object.assign({}, defaults, config)
-
 		return this.renderDefaultColumn( props )
 	}
 
-	renderColumns( columns ){
+	renderColumns(columns) {
 		return _.map(columns, (column, i) => {
-			
-			let type = column.type || 'default'
-
-			column = Object.assign(column, {key: i})
+			// let type = column.type || 'default'
+			const columnIn = Object.assign(column, {key: i})
 
 			switch ( column.type ) {
 				case 'index':
-					return this.renderIndexColumn(column)
+					return this.renderIndexColumn(columnIn)
 				case 'date':
-					return this.renderDateColumn(column)
-				case 'bool':	
+					return this.renderDateColumn(columnIn)
+				case 'bool':
 				case 'boolean':
-					return this.renderBooleanColumn(column)	
+					return this.renderBooleanColumn(columnIn)
 				default:
-				 return this.renderDefaultColumn(column)
+					return this.renderDefaultColumn(columnIn)
 			}
-			
 		})
 	}
 
-	render(){
-
+	render() {
 		const props = this.props
 		const columns = this.renderColumns(props.columns)
-
-		// sizePerPage={props.perPage} 
-		// bordered={true} 
-		// data={props.data} 
-		// selectRow={props.selectRow} 
-		// pagination={props.pagination} 
-		// striped={props.striped} 
-		// hover={props.hover} 
+		// sizePerPage={props.perPage}
+		// bordered={true}
+		// data={props.data}
+		// selectRow={props.selectRow}
+		// pagination={props.pagination}
+		// striped={props.striped}
+		// hover={props.hover}
 		// condensed={props.condensed}
 		// sizePerPageList={props.sizePerPageList}
-		
+
 		return (
-			<BootstrapTable 
-				data={props.data} 
-				selectRow={props.selectRow} 
-				pagination={props.pagination} 
-				
-				striped={props.striped} 
+			<BootstrapTable
+				data={props.data}
+				selectRow={props.selectRow}
+				pagination={props.pagination}
+				striped={props.striped}
 				hover={props.hover}
 				condensed={props.condensed}
-				bordered={props.bordered} 	
+				bordered={props.bordered}
 				options={props.options}
 			>
 				{columns}
 			</BootstrapTable>
 		)
-
 	}
-
 }
 
 export default BootstrapTablePreset

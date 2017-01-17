@@ -43,6 +43,17 @@ export function logout( req ) {
 	}
 }
 
+export function changeProfile( req, dispatch ) {
+	return axiosInstance.post('/login', {data: req}).then(( res ) => {
+		console.log(res)
+		dispatch(receiveLogin(res.data))
+		browserHistory.push('/')
+	}).catch(( res ) => {
+		console.log(res)
+		throw new SubmissionError({ _error: `bad_credentials` })
+	})
+}
+
 // REDUCERS
 const initialState = { }
 export default function reducer(state = initialState, action) {
