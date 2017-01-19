@@ -11,7 +11,7 @@ import FormInput from '../components/Form/Input'
 // import { fetchConcurrent, post, postTest } from '../modules/content'
 import { login } from '../modules/auth'
 import { defaultValidate as validate } from '../configs/form'
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 
 class AuthLogin extends React.Component {
 

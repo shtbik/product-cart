@@ -79,3 +79,21 @@
         margin-top: 10px;
     }
 }
+
+.table-striped {
+    
+    .bg-primary {
+        color: white;
+    }
+
+    tbody tr {
+
+        &:nth-of-type(even) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:nth-of-type(odd) {
+            background-color: transparent;
+        }
+    }
+}
