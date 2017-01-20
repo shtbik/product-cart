@@ -6,10 +6,10 @@ import { browserHistory } from 'react-router'
 import { axiosDefaults, core as coreConfig } from '../configs/core'
 
 // CONSTANTS
-export const AUTH_LOGIN_REQUEST = 'pp.admin/auth/AUTH_LOGIN_REQUEST'
-export const AUTH_LOGIN_RECEIVE = 'pp.admin/auth/AUTH_LOGIN_RECEIVE'
-export const AUTH_LOGOUT_REQUEST = 'pp.admin/auth/AUTH_LOGOUT_REQUEST'
-export const AUTH_LOGOUT_RECEIVE = 'pp.admin/auth/AUTH_LOGOUT_RECEIVE'
+export const AUTH_LOGIN_REQUEST = 'doalloc/auth/AUTH_LOGIN_REQUEST'
+export const AUTH_LOGIN_RECEIVE = 'doalloc/auth/AUTH_LOGIN_RECEIVE'
+export const AUTH_LOGOUT_REQUEST = 'doalloc/auth/AUTH_LOGOUT_REQUEST'
+export const AUTH_LOGOUT_RECEIVE = 'doalloc/auth/AUTH_LOGOUT_RECEIVE'
 
 // ACTIONS
 const axiosInstance = axios.create(axiosDefaults)

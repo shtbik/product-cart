@@ -42,5 +42,8 @@ import { Field } from 'redux-form'
 // })
 
 export default function FormInput(props) {
-	return <Field {...props} component="input" />
+	// console.log(props)
+	return (
+		<Field {...props} component="input" />
+	)
 }

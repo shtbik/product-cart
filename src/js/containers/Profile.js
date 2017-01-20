@@ -34,22 +34,26 @@ class Profile extends React.Component {
 
 		return (
 			<Loader show={false}>
-				<div className="row profile">
-					<div className="col-md-4 col-sm-3 col-xs-12">
-						<div className="text-center">
-							<img src="/img/default-avatar.jpg" className="avatar img-thumbnail" alt="avatar"/>
-							<h6>Загрузите фото...</h6>
-							<input type="file" className="text-center center-block well well-sm"/>
+				<form className="form-signin" role="form" onSubmit={handleSubmit(changeProfile)}>
+					<div className="row profile">
+						<div className="col-md-4 col-sm-3 col-xs-12">
+							<div className="text-center">
+								<img src="/img/default-avatar.jpg" className="avatar img-thumbnail" alt="avatar"/>
+								<h6>Загрузите фото...</h6>
+								<FormInput
+										type="file"
+										name="logo"
+										className="text-center center-block well well-sm"
+									/>
+							</div>
 						</div>
-					</div>
-					<div className="col-md-8 col-sm-9 col-xs-12 personal-info">
-						{ /* <div className="alert alert-info alert-dismissable">
-							<a className="panel-close close" data-dismiss="alert">×</a>
-							<i className="fa fa-coffee"></i>
-							This is an <strong>.alert</strong>. Use this to show important messages to the user.
-						</div> */ }
-						<h3>Ваши данные</h3>
-						<form className="form-signin" role="form" onSubmit={handleSubmit(changeProfile)}>
+						<div className="col-md-8 col-sm-9 col-xs-12 personal-info">
+							{ /* <div className="alert alert-info alert-dismissable">
+								<a className="panel-close close" data-dismiss="alert">×</a>
+								<i className="fa fa-coffee"></i>
+								This is an <strong>.alert</strong>. Use this to show important messages to the user.
+							</div> */ }
+							<h3>Ваши данные</h3>
 							<div className="row">
 								<div className="col-md-6 col-sm-12 col-xs-12">
 									<label className="checkbox pull-left">
@@ -132,9 +136,9 @@ class Profile extends React.Component {
 								Изменить информацию
 							</button>
 							<span className="clearfix"></span>
-						</form>
+						</div>
 					</div>
-				</div>
+				</form>
 			</Loader>
 		)
 	}

@@ -3,14 +3,20 @@ import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { reduxForm } from 'redux-form'
 import FormInput from '../components/Form/Input'
+import TextArea from '../components/Form/TextArea'
 import _ from 'lodash'
+import { postTest } from '../modules/tests'
 import {list_comp_classes, list_comps, list_comps_values} from '../configs/dataMarks'
 // import Base from './Base'
+// import { defaultValidate as validate } from '../configs/form'
 
 class Tests extends React.Component {
 
 	 static propTypes = {
-		params: PropTypes.object.isRequired
+		params: PropTypes.object.isRequired,
+		handleSubmit: PropTypes.func,
+		pristine: PropTypes.bool,
+		submitting: PropTypes.bool
 	}
 
 	// componentWillMount() {
@@ -18,23 +24,25 @@ class Tests extends React.Component {
 	// }
 
 	render() {
+		const {handleSubmit, pristine, submitting } = this.props
 		const thisTest = this.props.params.id
 		const nameTest = _.find(list_comp_classes, {'id': Number(thisTest)})
-		// console.log('Переменные: ', list_comps, list_comps_values)
+		const filterComps = _.filter(list_comps, {'class_name': Number(thisTest)});
 		// Выводим тест
-		const tests = _.map(list_comps, function(item, key) {
-			const filterTest = _.filter(list_comps_values, {'comps_name': item.id});
-			// console.log(filterTest, test)
+		const tests = _.map(filterComps, function(item, key) {
+			const filterTest = _.filter(list_comps_values, {'comps_id': Number(item.id)});
+			// console.log(list_comps_values, filterTest)
 			const testsValues = _.map(filterTest, function(item, key) {
 				return (
 					<tr key={key}>
 						<td>
-							{item.name}
+							<label htmlFor={'id_' + item.id} dangerouslySetInnerHTML={{__html: item.name}}></label>
 						</td>
 						<td className="text-center">
 							<FormInput
+								id={'id_' + item.id}
 								type="radio"
-								name={'comps_id_' + item.comps_name}
+								name={'comps_id_' + item.comps_id}
 								value={item.order.toString()}
 							/>
 						</td>
@@ -48,7 +56,7 @@ class Tests extends React.Component {
 							&nbsp;
 						</td>
 					</tr>
-					<tr>
+					<tr className="text-center">
 						<td colSpan="2">
 							<b>{item.name}</b>
 						</td>
@@ -63,31 +71,36 @@ class Tests extends React.Component {
 				<div className="row">
 					<div className="col-md-12 col-sm-12">
 						<h3 className="text-center">Тест "{nameTest.name}"</h3>
-						<form>
-							<table className="table table-striped table-responsive">
-								<thead>
-									<tr className="bg-primary">
-										<th>Оценка по компетенциям</th>
-										<th>Самооценка</th>
-									</tr>
-								</thead>
-								{tests}
-							</table>
-							<div className="form-group">
-								<textarea
-									className="form-control"
-									rows="5"
-									placeholder="Оставьте Ваш комментарий">
-								</textarea>
-							</div>
-							<div className="text-center">
-								<button
-									className="btn btn-lg btn-primary"
-									type="submit">
-									Отправить
-								</button>
-							</div>
-						</form>
+						{tests.length ?
+							<form onSubmit={handleSubmit(postTest)}>
+								<table className="table table-striped table-responsive">
+									<thead>
+										<tr className="bg-primary">
+											<th>Оценка по компетенциям</th>
+											<th>Самооценка</th>
+										</tr>
+									</thead>
+									{tests}
+								</table>
+								<div className="form-group">
+									<TextArea
+										className="form-control"
+										rows="5"
+										placeholder="Оставьте Ваш комментарий"
+										name="comment"
+									/>
+								</div>
+								<div className="text-center">
+									<button
+										disabled={pristine || submitting}
+										className="btn btn-lg btn-primary"
+										type="submit">
+										Отправить
+									</button>
+								</div>
+							</form> :
+							<p className="text-center">Данного теста нет на сервере</p>
+						}
 					</div>
 				</div>
 			</div>

@@ -16,7 +16,7 @@ class Mark extends React.Component {
 			_.map(list_comp_classes, function(item, key) {
 				return (
 					<div className="col-md-4 col-sm-4 col-xs-12 text-center" key={key}>
-						<p>Тест "{item.name}"</p>
+						<p><b>Тест "{item.name}"</b></p>
 						{item.mark_self ?
 							<div>
 								<Link to={`/mark/${item.id}`} className="btn btn-success disabled">Тест пройден</Link>

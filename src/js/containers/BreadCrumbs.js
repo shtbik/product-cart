@@ -13,7 +13,7 @@ class BreadCurmbs extends Base {
 	resolve() {
 		// const pathname = this.location('pathname')
 		const pathname = window.location.pathname
-		console.log('URL: ', pathname)
+		// console.log('URL: ', pathname)
 		const segments = _.filter( pathname.split('/'), (segment) => {
 			return !( (!isNaN(parseFloat(segment)) && isFinite(segment)) || segment.indexOf('-') !== -1 || segment === 'grid' )
 		})

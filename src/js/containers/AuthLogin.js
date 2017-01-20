@@ -82,4 +82,4 @@ class AuthLogin extends React.Component {
 	}
 }
 
-export default reduxForm({form: 'login', validate})(AuthLogin)
+export default reduxForm({form: 'login', syncValidation: validate})(AuthLogin)
