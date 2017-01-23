@@ -88,6 +88,15 @@
 
     tbody tr {
 
+        &.background-none {
+            background: none!important;
+
+            td {
+                border: none;
+                padding: 0.75rem 0;
+            }
+        }
+
         &:nth-of-type(even) {
             background-color: rgba(0, 0, 0, 0.05);
         }
@@ -95,5 +104,15 @@
         &:nth-of-type(odd) {
             background-color: transparent;
         }
+    }
+}
+
+textarea {
+    margin-bottom: 20px;
+}
+
+form {
+    .alert-danger {
+        margin-top: 20px;
     }
 }

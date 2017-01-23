@@ -8,7 +8,7 @@ import FormInput from '../components/Form/Input'
 // import FormSelect from '../components/Form/Select'
 // import { login } from '../modules/auth'
 import { reduxForm } from 'redux-form'
-import { defaultValidate as validate } from '../configs/form'
+// import { defaultValidate as validate } from '../configs/form'
 // import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table'
 // import { FormattedMessage, FormattedDate } from 'react-intl'
 
@@ -155,6 +155,6 @@ const mapStateToProps = ( state ) => ({ ...selector(state) })
 
 export default connect(mapStateToProps)(reduxForm({
 	form: 'profile',
-	validate,
+	// validate,
 	enableReinitialize: true
 })(Profile))
