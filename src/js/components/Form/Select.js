@@ -1,76 +1,43 @@
 import React from 'react'
-// import _ from 'lodash'
-// import { FormGroup, ControlLabel, HelpBlock } from 'react-bootstrap'
 import { Field } from 'redux-form'
-// import { injectIntl } from 'react-intl'
-// import cn from 'classnames'
+// import _ from 'lodash'
+import { FormGroup, FormControl } from 'react-bootstrap'
 
-// const input = injectIntl( ( props ) => {
-// 	const { intl, input, meta } = props
-// 	const labelId = `labels.${props.label || input.name}`
-// 	const label = intl.formatMessage({id: labelId})
+const input = (data) => {
+	// const { input, meta } = data
 
-// 	const errorId = `errors.${meta.error || 'generic'}`
-// 	const error = meta.error && intl.formatMessage({id: errorId})
+	const { input, meta, defaultValue, disabled, option } = data
+	const { value: inputValue, ...inputRest } = input
+	const value = inputValue || defaultValue
+	// const validations = _.get(data, 'validations', [])
+	// const isReqired = !!_.find(validations, (v) => {
+	// 	return ['required', 'non_empty'].indexOf(v) !== -1
+	// })
+	// console.log(data.input, isReqired)
+	const {error, touched} = meta
+	let validationState = null
+	// const floatlInputClass = data.classList
+	let errorText = null
+	if (error && touched) {
+		validationState = 'error'
+		errorText = error
+	}
 
-// 	const value = input.value || null
-// 	const multi = props.multi || null
-
-// 	const validations = _.get(props, 'validations', [])
-// 	const isReqired = !!_.find(validations, (v) => ['required', 'non_empty'].indexOf(v.validation_type) !== -1 )
-
-// 	const placeholderValues = _.merge({}, _.get(props, 'placeholder.values', {}), {name: label})
-// 	const placeholderString = props.placeholder ?
-// 		intl.formatMessage({id: `pl.${props.placeholder.id || input.name}`}, placeholderValues)
-// 			: intl.formatMessage({id: labelId})
-
-// 	const placeholder = isReqired ? `* ${placeholderString}` : placeholderString
-
-// 	const validationState = meta.error ? 'error' : null
-// 	const floatlInputClass = cn('floatl', {'floatl--active': multi ? _.size(value) : value }, props.className)
-// 	const selectClassName = cn({'Select-async': props.async})
-// 	const isLoading = props.isLoading
-
-// 	return (
-// 		<FormGroup className={floatlInputClass} controlId={input.name} validationState={validationState}>
-// 			<ControlLabel className="floatl__label">{label}</ControlLabel>
-// 			<Select
-// 				className={selectClassName}
-// 				options={props.options || []}
-// 				simpleValue
-// 				clearable
-// 				searchable
-// 				multi={multi}
-// 				clearAllText=''
-// 				backspaceToRemoveMessage=''
-// 				placeholder={placeholder}
-// 				labelKey={props.valueLabel || 'name'}
-// 				valueKey={props.valueKey || 'id'}
-// 				value={value}
-// 				onBlur={() => {}}
-// 				disabled={props.disabled}
-// 				onChange={(val, items) => {
-// 					var parsedVal
-
-// 					if( multi ) parsedVal = _.size(val) ? _.map( val.split(','), v => parseInt(v, 10) ) : []
-// 					else parsedVal = val
-
-// 					input.onChange(parsedVal)
-// 					if( props.onSelect ) props.onSelect(parsedVal)
-// 				}}
-
-// 				cache={false}
-// 				isLoading={isLoading}
-// 				async={props.async}
-// 				loadOptions={props.loadOptions}
-// 			/>
-// 			<HelpBlock>{error && <span>{error}</span>}</HelpBlock>
-// 		</FormGroup>
-// 	)
-// })
-
-export default function FormSelect(props) {
 	return (
-		<Field {...props}	component="select" />
+		<FormGroup controlId={input.name} validationState={validationState}>
+			<FormControl {...inputRest} disabled={disabled} componentClass="select">
+				<option>-----</option>
+				{option}
+			</FormControl>
+			{errorText && value &&
+				<div className="alert alert-danger">
+		 			<strong>Ошибка!</strong> {errorText}
+				</div>
+			}
+		</FormGroup>
 	)
+}
+
+export default function FormSelect(data) {
+	return <Field {...data}	component={input} />
 }

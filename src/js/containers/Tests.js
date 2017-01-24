@@ -111,7 +111,7 @@ class Tests extends React.Component {
 									{testsHtml}
 								</table>
 								<TextArea
-									classList="form-control"
+									className="form-control"
 									rows="5"
 									placeholder="Оставьте Ваш комментарий"
 									name="comment"

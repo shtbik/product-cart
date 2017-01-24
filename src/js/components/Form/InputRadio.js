@@ -17,7 +17,6 @@ const input = (data) => {
 	const placeholder = data.placeholder
 	const {error} = meta
 	const validationState = error ? 'error' : null
-	const floatlInputClass = data.classList
 	// let errorBlock = null
 	// if (error && touched) {
 	// 	errorBlock = (
@@ -40,7 +39,7 @@ const input = (data) => {
 
 	return (
 		<FormGroup controlId={input.name} validationState={validationState}>
-			<FormControl {...inputRest} className={floatlInputClass} disabled={disabled} type={type ? type : 'text'} placeholder={placeholder} />
+			<FormControl {...inputRest} disabled={disabled} type={type ? type : 'text'} placeholder={placeholder} />
 		</FormGroup>
 	)
 }
