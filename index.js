@@ -52,6 +52,24 @@ app.post('/reg', function(req, res) {
 	}
 })
 
+app.post('/api/post', function(req, res) {
+	var status = {
+		code: 200,
+		message: 'Ответ от API успешно получен'
+	}
+	res.json(status);
+})
+
+
+// Сделано для того, чтобы отделить get и post запросы. На get запрос отдает код странички html
+app.post('/api/get', function(req, res) {
+	var status = {
+		code: 200,
+		message: 'Ответ от API успешно получен'
+	}
+	res.json(status);
+})
+
 app.listen(port, function(error) {
 	if (error) {
 		console.error(error)

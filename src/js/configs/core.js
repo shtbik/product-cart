@@ -5,10 +5,14 @@ import store from '../store'
 const getBaseUrl = function() {
 	const { protocol, host } = _.get(window, 'location', { protocol: '', location: '', port: '' })
 
-	if (window && host.indexOf('partners.dasreda.ru') !== -1) {
-		return `${protocol}//ppapi.dasreda.ru/api/v1`
+	// if (window && host.indexOf('partners.dasreda.ru') !== -1) {
+	// 	return `${protocol}//ppapi.dasreda.ru/api/v1`
+	// }
+	// return `${protocol}//testapi.dasreda.ru:8081/api/v1`
+	if (window && host.indexOf('doalloc.dasreda.ru') !== -1) {
+		return `${protocol}//localhost:3000/api/`
 	}
-	return `${protocol}//testapi.dasreda.ru:8081/api/v1`
+	return `${protocol}//localhost:3000/api/`
 }
 
 const axiosDefaults = {

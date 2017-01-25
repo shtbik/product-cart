@@ -1,6 +1,4 @@
 import React, { PropTypes } from 'react'
-// import { connect } from 'react-redux'
-// import { createSelector } from 'reselect'
 import { reduxForm } from 'redux-form'
 import _ from 'lodash'
 import { Link } from 'react-router';

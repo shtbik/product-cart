@@ -9,6 +9,7 @@
 // department_id -> list_departments (отдел)
 // password
 const data_users = [{
+	'id': 1,
 	'first_name': 'Виктория',
 	'last_name': 'Арабина',
 	'middle_name': 'Васильевна',
@@ -19,6 +20,7 @@ const data_users = [{
 	'password': 'bp7L3za1',
 	'photo_url': null
 }, {
+	'id': 2,
 	'first_name': 'Екатерина',
 	'last_name': 'Барышева',
 	'middle_name': 'Сергеевна',
@@ -29,6 +31,7 @@ const data_users = [{
 	'password': 'RgBgvEBF',
 	'photo_url': null
 }, {
+	'id': 3,
 	'first_name': 'Елена',
 	'last_name': 'Бачинина',
 	'middle_name': 'Валерьевна',
@@ -39,6 +42,7 @@ const data_users = [{
 	'password': 'rd4Y0Cx3',
 	'photo_url': null
 }, {
+	'id': 4,
 	'first_name': 'Ольга',
 	'last_name': 'Беленко',
 	'middle_name': 'Петровна',
@@ -49,6 +53,7 @@ const data_users = [{
 	'password': '53tP9Wsq',
 	'photo_url': null
 }, {
+	'id': 5,
 	'first_name': 'Иван',
 	'last_name': 'Буртник',
 	'middle_name': 'Степанович',
@@ -59,6 +64,7 @@ const data_users = [{
 	'password': '3fvrNVle',
 	'photo_url': null
 }, {
+	'id': 6,
 	'first_name': 'Александр',
 	'last_name': 'Волченков',
 	'middle_name': 'Сергеевич',
@@ -67,6 +73,523 @@ const data_users = [{
 	'department_id': 4,
 	'grades_id': null,
 	'password': 'XPAd5M1N',
+	'photo_url': null
+}, {
+	'id': 7,
+	'first_name': 'Алексей ',
+	'middle_name': 'Валентинович',
+	'position': 1,
+	'password': 'YBWnPTFg',
+	'last_name': 'Воронин ',
+	'email': 'AVVoronin@dasreda.ru',
+	'department_id': 5,
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 8,
+	'first_name': 'Александр',
+	'middle_name': 'Александрович',
+	'position': 6,
+	'password': '7t34Lmrq',
+	'last_name': 'Голованов',
+	'email': 'AAGolovanov@dasreda.ru',
+	'department_id': 4,
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 9,
+	'first_name': 'Юрий',
+	'middle_name': 'Альфредович',
+	'last_name': 'Гонсалес',
+	'email': 'yagonsales@dasreda.ru',
+	'position': 7,
+	'department_id': 4,
+	'password': 'sFJ2TRYm',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 10,
+	'first_name': 'Алексей',
+	'last_name': 'Грищенко',
+	'middle_name': 'Владимирович',
+	'email': 'AVGrishchenko@dasreda.ru',
+	'position': '8',
+	'department_id': '6',
+	'password': 'qWH6TSrg',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 11,
+	'first_name': 'Татьяна',
+	'last_name': 'Гурова',
+	'middle_name': 'Васильевна',
+	'email': 'TVGurova@dasreda.ru',
+	'position': 9,
+	'department_id': 2,
+	'password': 'RNfP6cVx',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 12,
+	'first_name': 'Евгений',
+	'last_name': 'Домников',
+	'middle_name': 'Михайлович',
+	'email': 'EMDomnikov@dasreda.ru',
+	'position': 10,
+	'department_id': null,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'n3v58WaG'
+}, {
+	'id': 13,
+	'first_name': 'Евгения',
+	'last_name': 'Евсеенко',
+	'middle_name': 'Павловна',
+	'email': 'EPEvseenko@dasreda.ru',
+	'position': 11,
+	'department_id': 4,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'kcTBhwx7'
+}, {
+	'id': 14,
+	'first_name': 'Евгений',
+	'last_name': 'Жоков',
+	'middle_name': 'Владимирович',
+	'email': 'EVZhokov@dasreda.ru',
+	'position': 12,
+	'department_id': 7,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'xH35SZNA'
+}, {
+	'id': 15,
+	'first_name': 'Наталья',
+	'last_name': 'Заболотских',
+	'middle_name': 'Витальевна',
+	'email': 'NVZabolotskikh@dasreda.ru',
+	'position': 13,
+	'department_id': 1,
+	'grades_id': null,
+	'photo_url': null,
+	'password': '9SQMfLTV'
+}, {
+	'id': 16,
+	'first_name': 'Александр',
+	'last_name': 'Игнатов',
+	'middle_name': 'Андреевич',
+	'email': 'aaignatov@dasreda.ru',
+	'department_id': 7,
+	'position': 14,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'ycCnxYbM'
+}, {
+	'id': 17,
+	'first_name': 'Александр',
+	'last_name': 'Ильин',
+	'middle_name': 'Леонидович',
+	'email': 'ALIlin@dasreda.ru',
+	'position': 7,
+	'department_id': 4,
+	'grades_id': null,
+	'photo_url': null,
+	'password': '38dRCQLN'
+}, {
+	'id': 18,
+	'first_name': 'Карен',
+	'last_name': 'Кандаян ',
+	'middle_name': 'Арменович',
+	'email': 'KAKandayan@dasreda.ru',
+	'position': 1,
+	'department_id': 6,
+	'grades_id': null,
+	'photo_url': null,
+	'password': '4q2DaIsn'
+}, {
+	'id': 19,
+	'first_name': 'Владимир',
+	'last_name': 'Кичук',
+	'middle_name': 'Георгиевич',
+	'email': 'vgkichuk@dasreda.ru',
+	'position': 15,
+	'department_id': 4,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'gvQHJFKc'
+}, {
+	'id': 20,
+	'first_name': 'Антон',
+	'last_name': 'Клейман',
+	'middle_name': 'Михайлович',
+	'email': 'AMKleyman@dasreda.ru',
+	'department_id': 8,
+	'position': 13,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'XNKGan8R'
+}, {
+	'id': 21,
+	'first_name': 'Денис',
+	'last_name': 'Козлов',
+	'middle_name': 'Васильевич',
+	'email': 'DVKozlov@dasreda.ru',
+	'department_id': 6,
+	'position': 8,
+	'grades_id': null,
+	'photo_url': null,
+	'password': 'PA4Wrxmn'
+}, {
+	'id': 22,
+	'first_name': 'Андрей',
+	'last_name': 'Колесников',
+	'middle_name': 'Олегович',
+	'email': 'AOKolesnikov@dasreda.ru',
+	'department_id': 9,
+	'position': 16,
+	'password': 'ArtPnEY5',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 23,
+	'first_name': 'Дмитрий',
+	'last_name': 'Лаврентьев',
+	'middle_name': 'Евгеньевич',
+	'email': 'delavrentiev@dasreda.ru',
+	'position': 17,
+	'department_id': 1,
+	'password': '3AVET25D',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 24,
+	'first_name': 'Анна',
+	'last_name': 'Лимановская',
+	'middle_name': 'Валерьевна',
+	'email': 'avlimanovskaya@dasreda.ru',
+	'position': 18,
+	'department_id': 1,
+	'password': 'LPe63XH7',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 25,
+	'first_name': 'Валерий',
+	'last_name': 'Макаров',
+	'middle_name': 'Николаевич ',
+	'email': 'vnmakarov@dasreda.ru',
+	'position': 19,
+	'department_id': null,
+	'password': 'ykWCYUXa',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 26,
+	'first_name': 'Татьяна',
+	'last_name': 'Мишкина',
+	'middle_name': 'Владимировна',
+	'email': 'TVMishkina@dasreda.ru',
+	'position': 20,
+	'department_id': 10,
+	'password': 'akxK8NRf',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 27,
+	'first_name': 'Анна',
+	'last_name': 'Немухина',
+	'middle_name': 'Александровна',
+	'email': 'AANemukhina@dasreda.ru',
+	'position': 21,
+	'department_id': 3,
+	'password': 'KAaqbf2Q',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 28,
+	'first_name': 'Ксения',
+	'last_name': 'Никитина',
+	'middle_name': 'Евгеньевна',
+	'email': 'KENikitina@dasreda.ru',
+	'position': 13,
+	'department_id': 6,
+	'password': '9aGQStwW',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 29,
+	'first_name': 'Елена',
+	'last_name': 'Нуриджанова',
+	'middle_name': 'Владимировна',
+	'position': 13,
+	'department_id': 8,
+	'email': 'EVNuridzhanova@dasreda.ru',
+	'password': 'hDPvE2Fk',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 30,
+	'first_name': 'Елена',
+	'last_name': 'Опарышева',
+	'middle_name': 'Юрьевна',
+	'email': 'EYOparysheva@dasreda.ru',
+	'position': 13,
+	'department_id': 1,
+	'password': 'q8kGLYru',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 31,
+	'first_name': 'Мария',
+	'last_name': 'Петько',
+	'middle_name': 'Анатольевна',
+	'email': 'MAPetko@dasreda.ru',
+	'department_id': 8,
+	'position': 1,
+	'password': 'qxF4sBPw',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 32,
+	'first_name': 'Оксана',
+	'last_name': 'Плешкова',
+	'middle_name': 'Александровна',
+	'email': 'OAPleshkova@dasreda.ru',
+	'department_id': 4,
+	'position': 22,
+	'password': 'nZD9YbKC',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 33,
+	'first_name': 'Олеся',
+	'last_name': 'Поддубняк',
+	'middle_name': 'Андреевна',
+	'department_id': 1,
+	'email': 'OAPoddubnyak@dasreda.ru',
+	'position': 23,
+	'password': 'TSXbI5ON',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 34,
+	'first_name': 'Ольга',
+	'last_name': 'Псюрник',
+	'middle_name': 'Владимировна',
+	'email': 'OVPsyurnik@dasreda.ru',
+	'position': 24,
+	'department_id': 1,
+	'password': '9HUf7Gcy',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 35,
+	'first_name': 'Эльдар',
+	'last_name': 'Сатдаров',
+	'middle_name': 'Александрович',
+	'email': 'EASatdarov@dasreda.ru',
+	'position': 25,
+	'department_id': 9,
+	'password': 'RdAZyYCN',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 36,
+	'first_name': 'Иван',
+	'last_name': 'Семенов',
+	'middle_name': 'Андреевич',
+	'email': 'IASemenov@dasreda.ru',
+	'department_id': 6,
+	'position': 18,
+	'password': 'FS3hXwZ5',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 37,
+	'first_name': 'Екатерина',
+	'last_name': 'Сергеева',
+	'middle_name': 'Игоревна',
+	'email': 'EISergeeva@dasreda.ru',
+	'department_id': 9,
+	'position': 26,
+	'password': 'KAXFR45g',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 38,
+	'first_name': 'Анастасия',
+	'last_name': 'Титова',
+	'middle_name': 'Игоревна',
+	'email': 'aititova@dasreda.ru',
+	'department_id': 1,
+	'position': 25,
+	'password': 'fcvgLB4T',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 39,
+	'first_name': 'Андрей',
+	'last_name': 'Тихонов',
+	'middle_name': 'Александрович',
+	'email': 'AATikhonov@dasreda.ru',
+	'position': 27,
+	'password': 'LERvDgUN',
+	'department_id': null,
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 40,
+	'first_name': 'Николай',
+	'last_name': 'Тримонов',
+	'middle_name': 'Леонидович',
+	'email': 'NLTrimonov@dasreda.ru',
+	'department_id': 1,
+	'position': 18,
+	'password': 'gN4CXc5f',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 41,
+	'first_name': 'Владимир',
+	'last_name': 'Труфанов',
+	'middle_name': 'Владимирович',
+	'email': 'VVTrufanov@dasreda.ru',
+	'position': 28,
+	'department_id': null,
+	'password': 'AV9mFXSn',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 42,
+	'first_name': 'Екатерина',
+	'last_name': 'Тульская',
+	'middle_name': 'Юрьевна ',
+	'email': 'EYTulskaya@dasreda.ru',
+	'position': 13,
+	'department_id': 6,
+	'password': '2ADqYyd7',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 43,
+	'first_name': 'Екатерина',
+	'last_name': 'Уварычева',
+	'middle_name': 'Спиридоновна',
+	'email': 'ESUvarycheva@dasreda.ru',
+	'position': 13,
+	'department_id': 1,
+	'password': 'YFufLPm3',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 44,
+	'first_name': 'Вячеслав',
+	'last_name': 'Уфимцев',
+	'middle_name': 'Дмитриевич',
+	'email': 'VDUfimtsev@dasreda.ru',
+	'department_id': 8,
+	'position': 29,
+	'password': 'bdXsnvQx',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 45,
+	'first_name': 'Михаил',
+	'last_name': 'Федоренко',
+	'middle_name': 'Владимирович',
+	'email': 'MVFedorenko@dasreda.ru',
+	'position': 30,
+	'department_id': null,
+	'password': 'WdC7wzGI',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 46,
+	'first_name': 'Елена',
+	'last_name': 'Филина',
+	'middle_name': 'Сергеевна',
+	'email': 'ESFilina@dasreda.ru',
+	'department_id': 6,
+	'position': 2,
+	'password': 'KS4FDhrI',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 47,
+	'first_name': 'Мария',
+	'last_name': 'Хильченко',
+	'middle_name': 'Владимировна',
+	'email': 'mvkhilchenko@dasreda.ru',
+	'position': 31,
+	'department_id': 9,
+	'password': 'gGIZrSsu',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 48,
+	'first_name': 'Лилия',
+	'last_name': 'Чиж',
+	'middle_name': 'Мударисовна',
+	'email': 'LMChizh@dasreda.ru',
+	'department_id': 6,
+	'position': 18,
+	'password': 'pJwxXI4T',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 49,
+	'first_name': 'Элина',
+	'last_name': 'Шарафутдинова',
+	'middle_name': 'Гайсовна',
+	'email': 'EGSharafutdinova@dasreda.ru',
+	'department_id': 1,
+	'position': 13,
+	'password': 'Tg4wpEGU',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 50,
+	'first_name': 'Ольга',
+	'last_name': 'Шептухова',
+	'middle_name': 'Владимировна',
+	'email': 'ovsheptukhova@dasreda.ru',
+	'department_id': 1,
+	'position': 23,
+	'password': 'RABfJmbP',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 51,
+	'first_name': 'Роман',
+	'last_name': 'Шпагин',
+	'middle_name': 'Павлович',
+	'email': 'RPShpagin@dasreda.ru',
+	'position': 24,
+	'password': '6GdYtrIz',
+	'grades_id': null,
+	'photo_url': null,
+	'department_id': null
+}, {
+	'id': 52,
+	'first_name': 'Александр',
+	'last_name': 'Штыков',
+	'middle_name': 'Александрович',
+	'email': 'aashtykov@dasreda.ru',
+	'position': 32,
+	'department_id': 4,
+	'password': 'Dz3J8xsL',
+	'grades_id': null,
+	'photo_url': null
+}, {
+	'id': 53,
+	'first_name': 'Айнур',
+	'last_name': 'Ямалов',
+	'middle_name': 'Илгизович',
+	'email': 'AIYamalov@dasreda.ru',
+	'department_id': 1,
+	'position': 32,
+	'password': 'Nf5ZJSKA',
+	'grades_id': null,
 	'photo_url': null
 }]
 
@@ -235,5 +758,5 @@ const list_departments = [{
 	'parent_department_id': null
 }]
 
-
+// console.log(data_users, list_positions, list_departments)
 export { data_users, list_positions, list_departments }

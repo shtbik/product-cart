@@ -147,7 +147,11 @@ class Profile extends React.Component {
 const selector = createSelector(
 	(state) => state.auth,
 	(auth) => {
-		return {auth, initialValues: auth}
+		// Временная мера, пароль с сервера приходить не должен
+		auth.password = ''
+		return {
+			auth,
+			initialValues: auth}
 	}
 )
 

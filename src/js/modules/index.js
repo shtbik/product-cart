@@ -5,11 +5,12 @@ import { routerReducer } from 'react-router-redux'
 // import content from './content'
 import auth from './auth'
 import tests from './tests'
+import employees from './employees'
 
 export default combineReducers({
 	form: formReducer,
 	routing: routerReducer,
-	// content,
 	auth,
-	tests
+	tests,
+	employees
 })

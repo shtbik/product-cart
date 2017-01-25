@@ -1,11 +1,10 @@
-// import _ from 'lodash'
 import axios from 'axios'
 import _ from 'lodash'
 import { SubmissionError } from 'redux-form'
 import { browserHistory } from 'react-router'
 
-
 import { axiosDefaults, core as coreConfig } from '../configs/core'
+import { data_users } from '../configs/usersData'
 
 // CONSTANTS
 export const AUTH_LOGIN_REQUEST = 'doalloc/auth/AUTH_LOGIN_REQUEST'
@@ -17,7 +16,7 @@ export const AUTH_REGISTRATION_RECEIVE = 'doalloc/auth/AUTH_REGISTRATION_RECEIVE
 
 // ACTIONS
 // На время регистрации
-axiosDefaults.baseURL = 'http://localhost:3000/'
+// axiosDefaults.baseURL = 'http://localhost:3000/'
 const axiosInstance = axios.create(axiosDefaults)
 
 // -------SYNC-------
@@ -33,10 +32,24 @@ export const requestRegistration = ( params ) => ({type: AUTH_REGISTRATION_REQUE
 // -------ASYNC-------
 // _POST
 export function login( req, dispatch ) {
-	return axiosInstance.post('/login', {data: req}).then(( res ) => {
+	console.log('Ищем юзера: ', req)
+	const sendUser = req
+	return axiosInstance.post('/post', {data: req}).then(( res ) => {
 		console.log(res)
-		dispatch(receiveLogin(res.data))
-		browserHistory.push('/')
+		// dispatch(receiveLogin(res.data))
+		// browserHistory.push('/')
+		// Операция на время отсутсвия бекенда. Ищем юзера из файла и отдаем в redux
+		// // -------------------------------
+		const thisUser = _.find(data_users, {email: sendUser.email, password: sendUser.password})
+		if (thisUser && thisUser.email) {
+			thisUser.api_token = '702fcfec738f4cfa8f6b48c2a56b9534'
+			console.log(thisUser)
+			dispatch(receiveLogin(thisUser))
+			browserHistory.push('/')
+		} else {
+			throw new SubmissionError({ _error: `Пользователь не найден` })
+		}
+		// -------------------------------
 	}).catch(( res ) => {
 		console.log(res)
 		throw new SubmissionError({ _error: `bad_credentials` })

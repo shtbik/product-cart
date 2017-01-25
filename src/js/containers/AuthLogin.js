@@ -10,19 +10,20 @@ import FormInput from '../components/Form/Input'
 // import { Row, Col } from '../components/Bootstrap'
 // import { fetchConcurrent, post, postTest } from '../modules/content'
 import { login } from '../modules/auth'
-import { defaultValidate as validate } from '../configs/form'
+import { validateLogin as validate } from '../configs/form'
 import { Link } from 'react-router'
 
 class AuthLogin extends React.Component {
 
 	static propTypes = {
-		error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+		error: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 		handleSubmit: PropTypes.func,
-		submitting: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+		submitting: PropTypes.bool,
+		pristine: PropTypes.bool,
 	}
 
 	render() {
-		const {handleSubmit, submitting} = this.props
+		const {handleSubmit, submitting, pristine, error} = this.props
 		return (
 			<div className="login">
 				<Loader show={submitting}>
@@ -35,7 +36,7 @@ class AuthLogin extends React.Component {
 									<form className="form-signin" role="form" onSubmit={handleSubmit(login)}>
 										<FormInput
 											type="text"
-											name="username"
+											name="email"
 											className="form-control"
 											placeholder="E-mail"
 										/>
@@ -45,7 +46,13 @@ class AuthLogin extends React.Component {
 											className="form-control"
 											placeholder="Пароль"
 										/>
+										{error &&
+											<div className="alert alert-danger">
+												<strong>Ошибка!</strong> {error}.
+											</div>
+										}
 										<button
+											disabled={pristine || submitting}
 											className="btn btn-lg btn-primary btn-block"
 											type="submit">
 											Войти
@@ -63,23 +70,12 @@ class AuthLogin extends React.Component {
 						</div>
 					</div>
 				</Loader>
-				{ /* <div>
-					<div className="auth-header description">Новое партнерское приложение</div>
-					<div className="auth-header name">ИС «Единое окно»</div>
-					<Loader show={submitting}>
-						<form className="m-t" role="form" onSubmit={handleSubmit(login)}>
-							{error && <div className="alert alert-danger">ошибка</div>}
-							<FormInput name="username" />
-							<FormInput name="password" type="password" />
-							<button type="submit" className="btn btn-primary block full-width m-b">
-								отправить
-							</button>
-						</form>
-					</Loader>
-				</div> */ }
 			</div>
 		)
 	}
 }
 
-export default reduxForm({form: 'login', syncValidation: validate})(AuthLogin)
+export default reduxForm({
+	form: 'login',
+	validate
+})(AuthLogin)

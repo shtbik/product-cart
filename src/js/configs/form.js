@@ -25,9 +25,8 @@ const validateTest = (values, data) => {
 
 const validateReg = (values, data) => {
 	const errors = required(values, data)
-	required(values, data)
 	if (values.password && values.password.length < 8) {
-		errors.password = 'Пароль должны быть не меньше 8 символов'
+		errors.password = 'Пароль должен быть не меньше 8 символов'
 	}
 	if (values.password && values.password_repeat && (values.password !== values.password_repeat)) {
 		errors.password_repeat = 'Пароли должны совпадать'
@@ -36,4 +35,13 @@ const validateReg = (values, data) => {
 	return errors
 }
 
-export default { validateTest, validateReg }
+const validateLogin = (values, data) => {
+	const errors = required(values, data)
+	if (values.password && values.password.length < 6) {
+		errors.password = 'Пароль должен быть не меньше 6 символов'
+	}
+	// console.log(errors)
+	return errors
+}
+
+export default { validateTest, validateReg, validateLogin }
