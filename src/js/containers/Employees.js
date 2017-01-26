@@ -9,17 +9,17 @@ class Employees extends React.Component {
 
 	static propTypes = {
 		dispatch: PropTypes.func,
-		employees: PropTypes.object,
+		employees: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 		auth: PropTypes.object.isRequired,
 	}
 
 	componentDidMount() {
 		const {id} = this.props.auth
 		// Используется для идентификации пользователя. За какой период отдавать тесты вычисляем на сервере
-		const data = {
-			user_id: id
-		}
-		this.props.dispatch(getEmployees(data))
+		// const data = {
+		// 	user_id: id
+		// }
+		this.props.dispatch(getEmployees(id))
 	}
 
 	render() {
@@ -27,13 +27,13 @@ class Employees extends React.Component {
 		// console.log('Переменные: ', list_comp_classes)
 		let employeesTable = null
 		// Выводим все тесты юзера (пройденные или нет за этот квартал)
-		if (employees) {
+		if (employees && employees.length > 0) {
 			employeesTable = (
 				_.map(employees, function(item, key) {
 					const {last_name, first_name, middle_name, email, position, department_id} = item
 					return (
-						<tr>
-							<th>{key}</th>
+						<tr key={key}>
+							<th>{Number(key) + 1}</th>
 							<td>{last_name + ' ' + first_name + ' ' + middle_name}</td>
 							<td>{email}</td>
 							<td>{position}</td>
@@ -49,6 +49,7 @@ class Employees extends React.Component {
 				<div className="row">
 					<div className="col-md-12 col-sm-12">
 						<h3 className="text-center">Сотрудники в подчинении</h3>
+						<br />
 						{employeesTable ?
 							<table className="table table-striped">
 								<thead>
@@ -76,7 +77,7 @@ class Employees extends React.Component {
 
 const selector = createSelector(
 	(state) => state.auth,
-	(state) => state.employees,
+	(state) => state.employees.subordinates,
 	(auth, employees) => {
 		return { auth, employees }
 	}

@@ -15,7 +15,7 @@ const data_users = [{
 	'middle_name': 'Васильевна',
 	'email': 'vvarabina@dasreda.ru',
 	'position': 1,
-	'department_id': 1,
+	'department_id': 6,
 	'grades_id': null,
 	'password': 'bp7L3za1',
 	'photo_url': null
@@ -26,7 +26,7 @@ const data_users = [{
 	'middle_name': 'Сергеевна',
 	'email': 'esbarysheva@dasreda.ru',
 	'position': 2,
-	'department_id': 1,
+	'department_id': 6,
 	'grades_id': null,
 	'password': 'RgBgvEBF',
 	'photo_url': null
@@ -37,7 +37,7 @@ const data_users = [{
 	'middle_name': 'Валерьевна',
 	'email': 'evbachinina@dasreda.ru',
 	'position': 3,
-	'department_id': 2,
+	'department_id': 10,
 	'grades_id': null,
 	'password': 'rd4Y0Cx3',
 	'photo_url': null
@@ -48,7 +48,7 @@ const data_users = [{
 	'middle_name': 'Петровна',
 	'email': 'opbelenko@dasreda.ru',
 	'position': 4,
-	'department_id': 3,
+	'department_id': 8,
 	'grades_id': null,
 	'password': '53tP9Wsq',
 	'photo_url': null
@@ -59,7 +59,7 @@ const data_users = [{
 	'middle_name': 'Степанович',
 	'email': 'isburtnik@dasreda.ru',
 	'position': 5,
-	'department_id': null,
+	'department_id': '5,6,7',
 	'grades_id': null,
 	'password': '3fvrNVle',
 	'photo_url': null
@@ -70,19 +70,19 @@ const data_users = [{
 	'middle_name': 'Сергеевич',
 	'email': 'asvolchenkov@dasreda.ru',
 	'position': 6,
-	'department_id': 4,
+	'department_id': 3,
 	'grades_id': null,
 	'password': 'XPAd5M1N',
 	'photo_url': null
 }, {
 	'id': 7,
 	'first_name': 'Алексей ',
+	'last_name': 'Воронин ',
 	'middle_name': 'Валентинович',
 	'position': 1,
+	'department_id': 2,
 	'password': 'YBWnPTFg',
-	'last_name': 'Воронин ',
 	'email': 'AVVoronin@dasreda.ru',
-	'department_id': 5,
 	'grades_id': null,
 	'photo_url': null
 }, {
@@ -93,7 +93,7 @@ const data_users = [{
 	'password': '7t34Lmrq',
 	'last_name': 'Голованов',
 	'email': 'AAGolovanov@dasreda.ru',
-	'department_id': 4,
+	'department_id': 3,
 	'grades_id': null,
 	'photo_url': null
 }, {
@@ -103,7 +103,7 @@ const data_users = [{
 	'last_name': 'Гонсалес',
 	'email': 'yagonsales@dasreda.ru',
 	'position': 7,
-	'department_id': 4,
+	'department_id': 3,
 	'password': 'sFJ2TRYm',
 	'grades_id': null,
 	'photo_url': null
@@ -114,7 +114,7 @@ const data_users = [{
 	'middle_name': 'Владимирович',
 	'email': 'AVGrishchenko@dasreda.ru',
 	'position': '8',
-	'department_id': '6',
+	'department_id': 7,
 	'password': 'qWH6TSrg',
 	'grades_id': null,
 	'photo_url': null
@@ -125,7 +125,7 @@ const data_users = [{
 	'middle_name': 'Васильевна',
 	'email': 'TVGurova@dasreda.ru',
 	'position': 9,
-	'department_id': 2,
+	'department_id': 10,
 	'password': 'RNfP6cVx',
 	'grades_id': null,
 	'photo_url': null
@@ -136,7 +136,7 @@ const data_users = [{
 	'middle_name': 'Михайлович',
 	'email': 'EMDomnikov@dasreda.ru',
 	'position': 10,
-	'department_id': null,
+	'department_id': 4,
 	'grades_id': null,
 	'photo_url': null,
 	'password': 'n3v58WaG'
@@ -147,7 +147,7 @@ const data_users = [{
 	'middle_name': 'Павловна',
 	'email': 'EPEvseenko@dasreda.ru',
 	'position': 11,
-	'department_id': 4,
+	'department_id': 3,
 	'grades_id': null,
 	'photo_url': null,
 	'password': 'kcTBhwx7'
@@ -158,7 +158,7 @@ const data_users = [{
 	'middle_name': 'Владимирович',
 	'email': 'EVZhokov@dasreda.ru',
 	'position': 12,
-	'department_id': 7,
+	'department_id': 9,
 	'grades_id': null,
 	'photo_url': null,
 	'password': 'xH35SZNA'
@@ -169,7 +169,7 @@ const data_users = [{
 	'middle_name': 'Витальевна',
 	'email': 'NVZabolotskikh@dasreda.ru',
 	'position': 13,
-	'department_id': 1,
+	'department_id': 6,
 	'grades_id': null,
 	'photo_url': null,
 	'password': '9SQMfLTV'
@@ -179,7 +179,7 @@ const data_users = [{
 	'last_name': 'Игнатов',
 	'middle_name': 'Андреевич',
 	'email': 'aaignatov@dasreda.ru',
-	'department_id': 7,
+	'department_id': 9,
 	'position': 14,
 	'grades_id': null,
 	'photo_url': null,
@@ -191,7 +191,7 @@ const data_users = [{
 	'middle_name': 'Леонидович',
 	'email': 'ALIlin@dasreda.ru',
 	'position': 7,
-	'department_id': 4,
+	'department_id': 3,
 	'grades_id': null,
 	'photo_url': null,
 	'password': '38dRCQLN'
@@ -202,7 +202,7 @@ const data_users = [{
 	'middle_name': 'Арменович',
 	'email': 'KAKandayan@dasreda.ru',
 	'position': 1,
-	'department_id': 6,
+	'department_id': 7,
 	'grades_id': null,
 	'photo_url': null,
 	'password': '4q2DaIsn'
@@ -213,7 +213,7 @@ const data_users = [{
 	'middle_name': 'Георгиевич',
 	'email': 'vgkichuk@dasreda.ru',
 	'position': 15,
-	'department_id': 4,
+	'department_id': 3,
 	'grades_id': null,
 	'photo_url': null,
 	'password': 'gvQHJFKc'
@@ -223,7 +223,7 @@ const data_users = [{
 	'last_name': 'Клейман',
 	'middle_name': 'Михайлович',
 	'email': 'AMKleyman@dasreda.ru',
-	'department_id': 8,
+	'department_id': 5,
 	'position': 13,
 	'grades_id': null,
 	'photo_url': null,
@@ -234,7 +234,7 @@ const data_users = [{
 	'last_name': 'Козлов',
 	'middle_name': 'Васильевич',
 	'email': 'DVKozlov@dasreda.ru',
-	'department_id': 6,
+	'department_id': 7,
 	'position': 8,
 	'grades_id': null,
 	'photo_url': null,
@@ -245,7 +245,7 @@ const data_users = [{
 	'last_name': 'Колесников',
 	'middle_name': 'Олегович',
 	'email': 'AOKolesnikov@dasreda.ru',
-	'department_id': 9,
+	'department_id': 4,
 	'position': 16,
 	'password': 'ArtPnEY5',
 	'grades_id': null,
@@ -257,7 +257,7 @@ const data_users = [{
 	'middle_name': 'Евгеньевич',
 	'email': 'delavrentiev@dasreda.ru',
 	'position': 17,
-	'department_id': 1,
+	'department_id': 6,
 	'password': '3AVET25D',
 	'grades_id': null,
 	'photo_url': null
@@ -268,7 +268,7 @@ const data_users = [{
 	'middle_name': 'Валерьевна',
 	'email': 'avlimanovskaya@dasreda.ru',
 	'position': 18,
-	'department_id': 1,
+	'department_id': 6,
 	'password': 'LPe63XH7',
 	'grades_id': null,
 	'photo_url': null
@@ -279,7 +279,7 @@ const data_users = [{
 	'middle_name': 'Николаевич ',
 	'email': 'vnmakarov@dasreda.ru',
 	'position': 19,
-	'department_id': null,
+	'department_id': 12,
 	'password': 'ykWCYUXa',
 	'grades_id': null,
 	'photo_url': null
@@ -290,7 +290,7 @@ const data_users = [{
 	'middle_name': 'Владимировна',
 	'email': 'TVMishkina@dasreda.ru',
 	'position': 20,
-	'department_id': 10,
+	'department_id': 11,
 	'password': 'akxK8NRf',
 	'grades_id': null,
 	'photo_url': null
@@ -301,7 +301,7 @@ const data_users = [{
 	'middle_name': 'Александровна',
 	'email': 'AANemukhina@dasreda.ru',
 	'position': 21,
-	'department_id': 3,
+	'department_id': 8,
 	'password': 'KAaqbf2Q',
 	'grades_id': null,
 	'photo_url': null
@@ -312,7 +312,7 @@ const data_users = [{
 	'middle_name': 'Евгеньевна',
 	'email': 'KENikitina@dasreda.ru',
 	'position': 13,
-	'department_id': 6,
+	'department_id': 7,
 	'password': '9aGQStwW',
 	'grades_id': null,
 	'photo_url': null
@@ -322,7 +322,7 @@ const data_users = [{
 	'last_name': 'Нуриджанова',
 	'middle_name': 'Владимировна',
 	'position': 13,
-	'department_id': 8,
+	'department_id': 5,
 	'email': 'EVNuridzhanova@dasreda.ru',
 	'password': 'hDPvE2Fk',
 	'grades_id': null,
@@ -334,7 +334,7 @@ const data_users = [{
 	'middle_name': 'Юрьевна',
 	'email': 'EYOparysheva@dasreda.ru',
 	'position': 13,
-	'department_id': 1,
+	'department_id': 6,
 	'password': 'q8kGLYru',
 	'grades_id': null,
 	'photo_url': null
@@ -344,7 +344,7 @@ const data_users = [{
 	'last_name': 'Петько',
 	'middle_name': 'Анатольевна',
 	'email': 'MAPetko@dasreda.ru',
-	'department_id': 8,
+	'department_id': 5,
 	'position': 1,
 	'password': 'qxF4sBPw',
 	'grades_id': null,
@@ -355,7 +355,7 @@ const data_users = [{
 	'last_name': 'Плешкова',
 	'middle_name': 'Александровна',
 	'email': 'OAPleshkova@dasreda.ru',
-	'department_id': 4,
+	'department_id': 3,
 	'position': 22,
 	'password': 'nZD9YbKC',
 	'grades_id': null,
@@ -365,7 +365,7 @@ const data_users = [{
 	'first_name': 'Олеся',
 	'last_name': 'Поддубняк',
 	'middle_name': 'Андреевна',
-	'department_id': 1,
+	'department_id': 6,
 	'email': 'OAPoddubnyak@dasreda.ru',
 	'position': 23,
 	'password': 'TSXbI5ON',
@@ -378,7 +378,7 @@ const data_users = [{
 	'middle_name': 'Владимировна',
 	'email': 'OVPsyurnik@dasreda.ru',
 	'position': 24,
-	'department_id': 1,
+	'department_id': 6,
 	'password': '9HUf7Gcy',
 	'grades_id': null,
 	'photo_url': null
@@ -389,7 +389,7 @@ const data_users = [{
 	'middle_name': 'Александрович',
 	'email': 'EASatdarov@dasreda.ru',
 	'position': 25,
-	'department_id': 9,
+	'department_id': 4,
 	'password': 'RdAZyYCN',
 	'grades_id': null,
 	'photo_url': null
@@ -399,7 +399,7 @@ const data_users = [{
 	'last_name': 'Семенов',
 	'middle_name': 'Андреевич',
 	'email': 'IASemenov@dasreda.ru',
-	'department_id': 6,
+	'department_id': 7,
 	'position': 18,
 	'password': 'FS3hXwZ5',
 	'grades_id': null,
@@ -410,7 +410,7 @@ const data_users = [{
 	'last_name': 'Сергеева',
 	'middle_name': 'Игоревна',
 	'email': 'EISergeeva@dasreda.ru',
-	'department_id': 9,
+	'department_id': 4,
 	'position': 26,
 	'password': 'KAXFR45g',
 	'grades_id': null,
@@ -421,7 +421,7 @@ const data_users = [{
 	'last_name': 'Титова',
 	'middle_name': 'Игоревна',
 	'email': 'aititova@dasreda.ru',
-	'department_id': 1,
+	'department_id': 6,
 	'position': 25,
 	'password': 'fcvgLB4T',
 	'grades_id': null,
@@ -434,7 +434,7 @@ const data_users = [{
 	'email': 'AATikhonov@dasreda.ru',
 	'position': 27,
 	'password': 'LERvDgUN',
-	'department_id': null,
+	'department_id': '8,9,10,11',
 	'grades_id': null,
 	'photo_url': null
 }, {
@@ -443,7 +443,7 @@ const data_users = [{
 	'last_name': 'Тримонов',
 	'middle_name': 'Леонидович',
 	'email': 'NLTrimonov@dasreda.ru',
-	'department_id': 1,
+	'department_id': 6,
 	'position': 18,
 	'password': 'gN4CXc5f',
 	'grades_id': null,
@@ -455,7 +455,7 @@ const data_users = [{
 	'middle_name': 'Владимирович',
 	'email': 'VVTrufanov@dasreda.ru',
 	'position': 28,
-	'department_id': null,
+	'department_id': 3,
 	'password': 'AV9mFXSn',
 	'grades_id': null,
 	'photo_url': null
@@ -466,7 +466,7 @@ const data_users = [{
 	'middle_name': 'Юрьевна ',
 	'email': 'EYTulskaya@dasreda.ru',
 	'position': 13,
-	'department_id': 6,
+	'department_id': 7,
 	'password': '2ADqYyd7',
 	'grades_id': null,
 	'photo_url': null
@@ -477,7 +477,7 @@ const data_users = [{
 	'middle_name': 'Спиридоновна',
 	'email': 'ESUvarycheva@dasreda.ru',
 	'position': 13,
-	'department_id': 1,
+	'department_id': 6,
 	'password': 'YFufLPm3',
 	'grades_id': null,
 	'photo_url': null
@@ -487,7 +487,7 @@ const data_users = [{
 	'last_name': 'Уфимцев',
 	'middle_name': 'Дмитриевич',
 	'email': 'VDUfimtsev@dasreda.ru',
-	'department_id': 8,
+	'department_id': 5,
 	'position': 29,
 	'password': 'bdXsnvQx',
 	'grades_id': null,
@@ -509,7 +509,7 @@ const data_users = [{
 	'last_name': 'Филина',
 	'middle_name': 'Сергеевна',
 	'email': 'ESFilina@dasreda.ru',
-	'department_id': 6,
+	'department_id': 7,
 	'position': 2,
 	'password': 'KS4FDhrI',
 	'grades_id': null,
@@ -521,7 +521,7 @@ const data_users = [{
 	'middle_name': 'Владимировна',
 	'email': 'mvkhilchenko@dasreda.ru',
 	'position': 31,
-	'department_id': 9,
+	'department_id': 4,
 	'password': 'gGIZrSsu',
 	'grades_id': null,
 	'photo_url': null
@@ -531,7 +531,7 @@ const data_users = [{
 	'last_name': 'Чиж',
 	'middle_name': 'Мударисовна',
 	'email': 'LMChizh@dasreda.ru',
-	'department_id': 6,
+	'department_id': 7,
 	'position': 18,
 	'password': 'pJwxXI4T',
 	'grades_id': null,
@@ -542,7 +542,7 @@ const data_users = [{
 	'last_name': 'Шарафутдинова',
 	'middle_name': 'Гайсовна',
 	'email': 'EGSharafutdinova@dasreda.ru',
-	'department_id': 1,
+	'department_id': 6,
 	'position': 13,
 	'password': 'Tg4wpEGU',
 	'grades_id': null,
@@ -553,7 +553,7 @@ const data_users = [{
 	'last_name': 'Шептухова',
 	'middle_name': 'Владимировна',
 	'email': 'ovsheptukhova@dasreda.ru',
-	'department_id': 1,
+	'department_id': 6,
 	'position': 23,
 	'password': 'RABfJmbP',
 	'grades_id': null,
@@ -568,7 +568,7 @@ const data_users = [{
 	'password': '6GdYtrIz',
 	'grades_id': null,
 	'photo_url': null,
-	'department_id': null
+	'department_id': 6
 }, {
 	'id': 52,
 	'first_name': 'Александр',
@@ -576,8 +576,8 @@ const data_users = [{
 	'middle_name': 'Александрович',
 	'email': 'aashtykov@dasreda.ru',
 	'position': 32,
-	'department_id': 4,
-	'password': 'Dz3J8xsL',
+	'department_id': 3,
+	'password': '123456',
 	'grades_id': null,
 	'photo_url': null
 }, {
@@ -586,7 +586,7 @@ const data_users = [{
 	'last_name': 'Ямалов',
 	'middle_name': 'Илгизович',
 	'email': 'AIYamalov@dasreda.ru',
-	'department_id': 1,
+	'department_id': 6,
 	'position': 32,
 	'password': 'Nf5ZJSKA',
 	'grades_id': null,
@@ -708,54 +708,64 @@ const list_positions = [{
 // parent_department_id -> list_departments (Ссылка на отдел, который стоит над данным отделом)
 const list_departments = [{
 	'id': 1,
-	'name': 'Дирекция партнерских программ',
-	'manager_id': null,
+	'name': 'Генеральный директор',
+	'manager_id': 45,
 	'parent_department_id': null
 }, {
 	'id': 2,
-	'name': 'Административная группа',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция перспективных проектов',
+	'manager_id': 7,
+	'parent_department_id': '1'
 }, {
 	'id': 3,
-	'name': 'Финансовая служба',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция ИТ-разработок и эксплуатации',
+	'manager_id': 41,
+	'parent_department_id': '1'
 }, {
 	'id': 4,
-	'name': 'Дирекция ИТ-разработок и эксплуатации',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция по маркетингу и коммуникациям',
+	'manager_id': 12,
+	'parent_department_id': '1'
 }, {
 	'id': 5,
-	'name': 'Дирекция перспективных проектов',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция образовательных программ',
+	'manager_id': 31,
+	'parent_department_id': '1'
 }, {
 	'id': 6,
-	'name': 'Дирекция продуктов и сервисов',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция партнерских программ',
+	'manager_id': 1,
+	'parent_department_id': '1'
 }, {
 	'id': 7,
-	'name': 'Юридическая служба',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Дирекция продуктов и сервисов',
+	'manager_id': 5,
+	'parent_department_id': '1'
 }, {
 	'id': 8,
-	'name': 'Дирекция образовательных программ',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Финансовая служба',
+	'manager_id': 39,
+	'parent_department_id': '1'
 }, {
 	'id': 9,
-	'name': 'Дирекция по маркетингу и коммуникациям',
-	'manager_id': null,
-	'parent_department_id': null
+	'name': 'Юридическая служба',
+	'manager_id': 39,
+	'parent_department_id': '1'
 }, {
 	'id': 10,
+	'name': 'Административная группа',
+	'manager_id': 39,
+	'parent_department_id': '1'
+}, {
+	'id': 11,
 	'name': 'Группа по работе с персоналом',
-	'manager_id': null,
-	'parent_department_id': null
+	'manager_id': 39,
+	'parent_department_id': '1'
+}, {
+	'id': 12,
+	'name': 'Группа информационной безопасности',
+	'manager_id': 25,
+	'parent_department_id': '1'
 }]
 
 // console.log(data_users, list_positions, list_departments)
