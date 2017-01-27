@@ -60,10 +60,45 @@ body {
 	.profile {
 		margin-top: 14px;
 
+		.form-group {
+
+			input[name="photo_url"] + div {
+				border-color: rgba(255, 255, 255, 0)!important;
+				width: 230px!important;
+		    height: 230px!important;
+		    margin: auto!important;
+			}
+		}
+
 		.avatar {
 			width: 230px;
-			max-width: 100%;
-			height: 230px;
+	    max-width: 100%;
+	    height: 230px;
+	    position: relative;
+	    display: table;
+
+	    div {
+	    	display: table-cell;
+	    	vertical-align: middle;
+
+	    	span {
+	    		display: block;
+	    	}
+	    }
+
+			// p {
+			// 	line-height: 230px;
+
+			// 	span {
+			// 		line-height: inherit;
+			// 	}
+			// }
+
+			img {
+				max-width: 100%;
+				height: 100%;
+				border-radius: 5px;
+			}
 		}
 
 		h6 {

@@ -4,7 +4,7 @@ import { SubmissionError } from 'redux-form'
 import { browserHistory } from 'react-router'
 
 import { axiosDefaults, core as coreConfig } from '../configs/core'
-import { data_users } from '../configs/usersData'
+import { data_users, list_positions, list_departments } from '../configs/usersData'
 
 // CONSTANTS
 export const AUTH_LOGIN_REQUEST = 'doalloc/auth/AUTH_LOGIN_REQUEST'
@@ -13,6 +13,8 @@ export const AUTH_LOGOUT_REQUEST = 'doalloc/auth/AUTH_LOGOUT_REQUEST'
 export const AUTH_LOGOUT_RECEIVE = 'doalloc/auth/AUTH_LOGOUT_RECEIVE'
 export const AUTH_REGISTRATION_REQUEST = 'doalloc/auth/AUTH_REGISTRATION_REQUEST'
 export const AUTH_REGISTRATION_RECEIVE = 'doalloc/auth/AUTH_REGISTRATION_RECEIVE'
+export const AUTH_CHANGEPROFILE_REQUEST = 'doalloc/auth/AUTH_CHANGEPROFILE_REQUEST'
+export const AUTH_CHANGEPROFILE_RECEIVE = 'doalloc/auth/AUTH_CHANGEPROFILE_RECEIVE'
 
 // ACTIONS
 // На время регистрации
@@ -29,6 +31,10 @@ export const requestLogout = ( params ) => ({type: AUTH_LOGOUT_REQUEST, params})
 export const receiveRegistration = ( data ) => ({type: AUTH_REGISTRATION_RECEIVE, data, receivedAt: Date.now()})
 export const requestRegistration = ( params ) => ({type: AUTH_REGISTRATION_REQUEST, params})
 
+export const receiveChangeProfile = ( data ) => ({type: AUTH_CHANGEPROFILE_RECEIVE, data, receivedAt: Date.now()})
+export const requestChangeProfile = ( params ) => ({type: AUTH_CHANGEPROFILE_REQUEST, params})
+
+
 // -------ASYNC-------
 // _POST
 export function login( req, dispatch ) {
@@ -42,8 +48,13 @@ export function login( req, dispatch ) {
 		// // -------------------------------
 		const thisUser = _.find(data_users, {email: sendUser.email, password: sendUser.password})
 		if (thisUser && thisUser.email) {
+			const thisPosition = _.find(list_positions, {id: Number(thisUser.position)})
+			const thisDepartament = _.find(list_departments, {id: Number(thisUser.department_id)})
+			// console.log(thisPosition, thisDepartament)
+			thisUser.position = thisPosition.name
+			thisUser.department_id = thisDepartament.name
 			thisUser.api_token = '702fcfec738f4cfa8f6b48c2a56b9534'
-			console.log(thisUser)
+			// console.log(thisUser)
 			dispatch(receiveLogin(thisUser))
 			browserHistory.push('/')
 		} else {
@@ -87,15 +98,17 @@ export function reg( req, data, dispatch ) {
 }
 
 
-export function changeProfile( req, dispatch ) {
-	return axiosInstance.post('/login', {data: req}).then(( res ) => {
-		console.log(res)
-		dispatch(receiveLogin(res.data))
-		browserHistory.push('/')
-	}).catch(( res ) => {
-		console.log(res)
-		throw new SubmissionError({ _error: `bad_credentials` })
-	})
+export function changeProfile(req) {
+	console.log('Отравка данных на сервер:', req)
+	return (dispatch) => {
+		return axiosInstance.post('/post', {data: req}).then(( res ) => {
+			console.log(res)
+			dispatch(receiveChangeProfile(res.data))
+		}).catch(( res ) => {
+			console.log(res)
+			throw new SubmissionError({ _error: `bad_credentials` })
+		})
+	}
 }
 
 // REDUCERS
@@ -107,6 +120,9 @@ export default function reducer(state = initialState, action) {
 
 		case AUTH_REGISTRATION_RECEIVE:
 			return Object.assign({}, state, null)
+
+		case AUTH_CHANGEPROFILE_RECEIVE:
+			return Object.assign({}, state, action.data)
 
 		case AUTH_LOGOUT_REQUEST:
 			return initialState

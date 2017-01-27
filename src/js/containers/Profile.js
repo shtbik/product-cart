@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 // import _ from 'lodash'
 import { createSelector } from 'reselect'
 import FormInput from '../components/Form/Input'
+import FormInputFile from '../components/Form/InputFile'
 // import FormSelect from '../components/Form/Select'
 // import { login } from '../modules/auth'
 import { reduxForm } from 'redux-form'
@@ -26,25 +27,27 @@ class Profile extends React.Component {
 		auth: PropTypes.object.isRequired,
 		handleSubmit: PropTypes.func,
 		pristine: PropTypes.bool,
-		submitting: PropTypes.bool
+		submitting: PropTypes.bool,
+		initialValues: PropTypes.object,
+		profile: PropTypes.object
 	}
 
 	render() {
 		const {handleSubmit, pristine, submitting } = this.props
+		// if (profile) console.log(profile.values.photo_url[0])
 
 		return (
 			<Loader show={false}>
-				<form className="form-signin" role="form" onSubmit={handleSubmit(changeProfile)}>
+				<form className="form-profile" role="form" onSubmit={handleSubmit(changeProfile)}>
 					<div className="row profile">
 						<div className="col-md-4 col-sm-3 col-xs-12">
 							<div className="text-center">
-								<img src="/img/default-avatar.jpg" className="avatar img-thumbnail" alt="avatar"/>
-								<h6>Загрузите фото...</h6>
-								<FormInput
-										type="file"
-										name="logo"
-										className="text-center center-block well well-sm"
-									/>
+								<FormInputFile
+									type="file"
+									name="photo_url"
+									size={1000000}
+									className="photo_url"
+								/>
 							</div>
 						</div>
 						<div className="col-md-8 col-sm-9 col-xs-12 personal-info">
@@ -146,11 +149,13 @@ class Profile extends React.Component {
 
 const selector = createSelector(
 	(state) => state.auth,
-	(auth) => {
+	(state) => state.form.profile,
+	(auth, profile) => {
 		// Временная мера, пароль с сервера приходить не должен
 		auth.password = ''
 		return {
 			auth,
+			profile,
 			initialValues: auth}
 	}
 )

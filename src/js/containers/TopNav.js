@@ -33,7 +33,7 @@ class TopNav extends Base {
 		// const placeholder = <FormattedMessage id="nav.search" />
 
 		const auth = _.get(props, 'auth', {})
-		const userName = [auth.last_name, auth.first_name].join(' ')
+		const userName = [auth.first_name, auth.last_name].join(' ')
 
 		return (
 			<nav className="navbar navbar-toggleable-md navbar-light bg-faded">

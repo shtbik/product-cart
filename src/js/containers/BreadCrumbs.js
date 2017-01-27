@@ -2,9 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import cn from 'classnames'
-// import { FormattedMessage } from 'react-intl'
 import _ from 'lodash'
-
+import { transfer } from '../configs/breadcrumbs'
 import Base from './Base'
 
 
@@ -19,7 +18,13 @@ class BreadCurmbs extends Base {
 		})
 
 		const result = segments.map( (segment, i) => {
-			const current = segment === '' ? 'Главная' : segment
+			let transferName = null
+			if (transfer[segment]) {
+				transferName = transfer[segment]
+			} else {
+				transferName = segment
+			}
+			const current = segment === '' ? 'Главная' : transferName
 			const url = i === 0 ? '/' : segments.slice(0, i + 1).join('/')
 
 			return {

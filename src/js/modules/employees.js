@@ -28,22 +28,45 @@ export function getEmployees(userId) {
 				let subordinates = [];
 				_.map(userDepartaments, function(item) {
 					const idDepartaments = item.id
-					_.filter(data_users, function(item) {
-						const thisDepartment_id = item.department_id
-						if (thisDepartment_id === idDepartaments || (thisDepartment_id && thisDepartment_id.toString().indexOf(idDepartaments.toString()) !== -1)) {
-							subordinates.push(item)
-							return true
-						}
-					})
+					if (item.parent_department_id !== null) {
+						_.filter(data_users, function(item) {
+							const {department_id, id} = item
+							// В этом случае мы выводим людей которые управляют несколькими отделами, но обычно именно они стоят выше, поэтому пропускаем
+							// if (department_id === idDepartaments || (department_id && department_id.toString().indexOf(idDepartaments.toString()) !== -1)) {
+							if (department_id === idDepartaments && id !== userId) {
+								subordinates.push(item)
+								return true
+							}
+						})
+					} else {
+						_.forEach(list_departments, function(item) {
+							const {manager_id} = item
+							if (manager_id !== userId) {
+								subordinates.push(_.find(data_users, {id: manager_id}))
+							}
+						})
+					}
 				})
 				subordinates = _.uniq(subordinates)
+				console.log(subordinates)
 				// Меняем значение id на реальные названия
 				if (subordinates && subordinates.length > 0) {
 					_.forEach(subordinates, function(item) {
 						const thisPosition = _.find(list_positions, {id: Number(item.position)})
-						const thisDepartment = _.find(list_departments, {id: Number(item.department_id)})
 						item.position = thisPosition.name
-						if (thisDepartment) {
+						let thisDepartment = null
+						if (typeof item.department_id === 'string') {
+							const arrDepartment = item.department_id.split(',')
+							thisDepartment = []
+							_.forEach(arrDepartment, function(item) {
+								const department = _.find(list_departments, {id: Number(item)})
+								if (department) {
+									thisDepartment.push(department.name)
+								}
+							})
+							item.department_id = thisDepartment.join(', ')
+						} else {
+							thisDepartment = _.find(list_departments, {id: Number(item.department_id)})
 							item.department_id = thisDepartment.name
 						}
 					})

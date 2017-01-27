@@ -433,7 +433,7 @@ const data_users = [{
 	'middle_name': 'Александрович',
 	'email': 'AATikhonov@dasreda.ru',
 	'position': 27,
-	'password': 'LERvDgUN',
+	'password': '123456',
 	'department_id': '8,9,10,11',
 	'grades_id': null,
 	'photo_url': null
@@ -456,7 +456,7 @@ const data_users = [{
 	'email': 'VVTrufanov@dasreda.ru',
 	'position': 28,
 	'department_id': 3,
-	'password': 'AV9mFXSn',
+	'password': '123456',
 	'grades_id': null,
 	'photo_url': null
 }, {
@@ -499,10 +499,10 @@ const data_users = [{
 	'middle_name': 'Владимирович',
 	'email': 'MVFedorenko@dasreda.ru',
 	'position': 30,
-	'department_id': null,
-	'password': 'WdC7wzGI',
+	'department_id': 1,
+	'password': '123456',
 	'grades_id': null,
-	'photo_url': null
+	'photo_url': 'default-avatar.jpg'
 }, {
 	'id': 46,
 	'first_name': 'Елена',
@@ -708,7 +708,7 @@ const list_positions = [{
 // parent_department_id -> list_departments (Ссылка на отдел, который стоит над данным отделом)
 const list_departments = [{
 	'id': 1,
-	'name': 'Генеральный директор',
+	'name': 'Правление',
 	'manager_id': 45,
 	'parent_department_id': null
 }, {
