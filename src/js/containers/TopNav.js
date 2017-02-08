@@ -63,9 +63,13 @@ class TopNav extends Base {
 							<li className="nav-item">
 								<Link to="/allocation" className="nav-link" activeClassName="on">Аллокации</Link>
 							</li>
-							<li className="nav-item">
-								<Link to="/employees" className="nav-link" activeClassName="on">Сотрудники в подчинении</Link>
-							</li>
+							{
+								auth.manager ?
+									<li className="nav-item">
+										<Link to="/employees" className="nav-link" activeClassName="on">Сотрудники в подчинении</Link>
+									</li>
+								: null
+							}
 							<li className="nav-item">
 								<Link to="/graphics" className="nav-link" activeClassName="on">Графики результативности</Link>
 							</li>

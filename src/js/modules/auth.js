@@ -46,13 +46,37 @@ export function login( req, dispatch ) {
 		// browserHistory.push('/')
 		// Операция на время отсутсвия бекенда. Ищем юзера из файла и отдаем в redux
 		// // -------------------------------
-		const thisUser = _.find(data_users, {email: sendUser.email, password: sendUser.password})
+		let thisUser = null
+		// Есть баг, изменяется изначальный объект с юзерами. И нужные поля пустые.
+		thisUser = _.find(data_users, {email: sendUser.email, password: sendUser.password})
+		console.log(data_users, thisUser, thisUser.id)
 		if (thisUser && thisUser.email) {
 			const thisPosition = _.find(list_positions, {id: Number(thisUser.position)})
-			const thisDepartament = _.find(list_departments, {id: Number(thisUser.department_id)})
-			// console.log(thisPosition, thisDepartament)
+			let thisDepartment = null
+			if (typeof thisUser.department_id === 'string') {
+				const arrDepartment = thisUser.department_id.split(',')
+				thisDepartment = []
+				_.forEach(arrDepartment, function(item) {
+					let department = null
+					department = _.find(list_departments, {id: Number(item)})
+					if (department) {
+						thisDepartment.push(department.name)
+					}
+				})
+				thisUser.department_id = thisDepartment.join(', ')
+			} else {
+				thisDepartment = _.find(list_departments, {id: Number(thisUser.department_id)})
+				thisUser.department_id = thisDepartment.name
+			}
+			// const thisDepartament = _.find(list_departments, {id: Number(thisUser.department_id)})
+			// console.log(thisPosition, thisDepartment)
 			thisUser.position = thisPosition.name
-			thisUser.department_id = thisDepartament.name
+			// thisUser.department_id = thisDepartament.name
+			if (Array.isArray(thisDepartment) || thisDepartment.manager_id === thisUser.id) {
+				thisUser.manager = true
+			} else {
+				thisUser.manager = false
+			}
 			thisUser.api_token = '702fcfec738f4cfa8f6b48c2a56b9534'
 			// console.log(thisUser)
 			dispatch(receiveLogin(thisUser))
