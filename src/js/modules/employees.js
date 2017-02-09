@@ -22,37 +22,41 @@ export function getEmployees(userId) {
 	return (dispatch) => {
 		return axiosInstance.post('/post', {user_id: userId}).then(( res ) => {
 			console.log(res)
+			// const userDepartaments = Object.assign({}, _.filter(list_departments, {manager_id: Number(userId)}))
 			const userDepartaments = _.filter(list_departments, {manager_id: Number(userId)})
-			console.log(userDepartaments)
+			// console.log('Департаменты юзера: ', userDepartaments)
 			if (userDepartaments && userDepartaments.length > 0) {
 				let subordinates = [];
 				_.map(userDepartaments, function(item) {
 					const idDepartaments = item.id
 					if (item.parent_department_id !== null) {
-						_.filter(data_users, function(item) {
+						Object.assign({}, _.filter(data_users, function(item) {
 							const {department_id, id} = item
 							// В этом случае мы выводим людей которые управляют несколькими отделами, но обычно именно они стоят выше, поэтому пропускаем
 							// if (department_id === idDepartaments || (department_id && department_id.toString().indexOf(idDepartaments.toString()) !== -1)) {
 							if (department_id === idDepartaments && id !== userId) {
-								subordinates.push(item)
+								const clone = Object.assign({}, item)
+								subordinates.push(clone)
 								return true
 							}
-						})
+						}))
 					} else {
 						_.forEach(list_departments, function(item) {
 							const {manager_id} = item
 							if (manager_id !== userId) {
-								subordinates.push(_.find(data_users, {id: manager_id}))
+								const clone = Object.assign({}, _.find(data_users, {id: manager_id}))
+								subordinates.push(clone)
 							}
 						})
 					}
 				})
 				subordinates = _.uniq(subordinates)
-				console.log(subordinates)
+				// console.log('Подчиненные: ', JSON.parse(JSON.stringify(subordinates)))
+				// console.log('Подчиненные: ', subordinates)
 				// Меняем значение id на реальные названия
 				if (subordinates && subordinates.length > 0) {
 					_.forEach(subordinates, function(item) {
-						const thisPosition = _.find(list_positions, {id: Number(item.position)})
+						const thisPosition = Object.assign({}, _.find(list_positions, {id: Number(item.position)}))
 						item.position = thisPosition.name
 						let thisDepartment = null
 						if (typeof item.department_id === 'string') {
@@ -71,7 +75,7 @@ export function getEmployees(userId) {
 						}
 					})
 				}
-				console.log(subordinates)
+				// console.log('Подчиненные c текстовыми данными: ', subordinates)
 				// console.log(userDepartaments, subordinates)
 				dispatch(receiveEmployees(subordinates))
 			} else {

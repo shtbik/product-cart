@@ -6,6 +6,8 @@ import Home from '../containers/Home'
 import Profile from '../containers/Profile'
 import Mark from '../containers/Mark'
 import Tests from '../containers/Tests'
+import Allocations from '../containers/Allocations'
+import addAllocation from '../containers/addAllocation'
 import Employees from '../containers/Employees'
 // import Users from '../containers/Users'
 // import Brokers from '../containers/Brokers'
@@ -52,6 +54,8 @@ const AppRoutes = (
 		<Route path="profile" component={Profile}/>
 		<Route path="mark" component={Mark}/>
 		<Route path="mark/:id" component={Tests}/>
+		<Route path="allocation" component={Allocations}/>
+		<Route path="allocation/add" component={addAllocation}/>
 		<Route path="employees" component={Employees}/>
 		{ /* <Route path="user" component={UserPage}/>
 		<Route path="partner" component={PartnerPage}/>

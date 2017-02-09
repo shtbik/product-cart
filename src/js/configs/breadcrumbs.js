@@ -3,7 +3,8 @@ const transfer = {
 	'graphics': 'Графики результативности',
 	'mark': 'Деловая оценка',
 	'allocation': 'Аллокации',
-	'profile': 'Профиль'
+	'profile': 'Профиль',
+	'add': 'Добавить'
 }
 
 export { transfer }

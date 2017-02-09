@@ -45,7 +45,7 @@ class Profile extends React.Component {
 								<FormInputFile
 									type="file"
 									name="photo_url"
-									size={1000000}
+									size={10000000}
 									className="photo_url"
 								/>
 							</div>

@@ -2,11 +2,11 @@
 const list_comp_classes = [{
 	'id': 1,
 	'name': 'Я - лидер',
-	'mark_self': null
+	'mark_self': 'A'
 }, {
 	'id': 2,
 	'name': 'Мы - команда',
-	'mark_self': null
+	'mark_self': 'CB'
 }, {
 	'id': 3,
 	'name': 'Все - для клиента',

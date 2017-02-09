@@ -6,7 +6,7 @@ import { FormGroup, FormControl } from 'react-bootstrap'
 const input = (data) => {
 	// const { input, meta } = data
 
-	const { input, meta, defaultValue, disabled, option } = data
+	const { input, meta, defaultValue, disabled, children } = data
 	const { value: inputValue, ...inputRest } = input
 	const value = inputValue || defaultValue
 	// const validations = _.get(data, 'validations', [])
@@ -22,12 +22,13 @@ const input = (data) => {
 		validationState = 'error'
 		errorText = error
 	}
+	// console.log(input, data)
 
 	return (
 		<FormGroup controlId={input.name} validationState={validationState}>
 			<FormControl {...inputRest} disabled={disabled} componentClass="select">
 				<option>-----</option>
-				{option}
+				{children}
 			</FormControl>
 			{errorText && value &&
 				<div className="alert alert-danger">

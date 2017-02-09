@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import { createSelector } from 'reselect'
 import { Link } from 'react-router'
 import _ from 'lodash'
@@ -27,6 +28,7 @@ class Mark extends React.Component {
 		const {list_comp_classes} = this.props.tests
 		// console.log('Переменные: ', list_comp_classes)
 		let tests = null
+		const quarter = moment().format('Q')
 		// Выводим все тесты юзера (пройденные или нет за этот квартал)
 		if (list_comp_classes) {
 			tests = (
@@ -52,7 +54,7 @@ class Mark extends React.Component {
 			<div className="container mark">
 				<div className="row">
 					<div className="col-md-12 col-sm-12">
-						<h3 className="text-center">Оценка ценностной компетенции</h3>
+						<h3 className="text-center">Оценка ценностной компетенции за {quarter} квартал</h3>
 						<ol>
 							<li>
 								Поставьте один любой символ напротив одного высказывания, которое соответствовало проявлению каждой компетенции (ответственность, готовность к изменениям, саморазвитие ) в текущем квартале

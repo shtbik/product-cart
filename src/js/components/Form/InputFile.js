@@ -47,10 +47,9 @@ const input = (data) => {
 		selectedFile = input.value[0]
 	}
 
-	// console.log(input && input.value && typeof input.value === 'string')
 	let bodyDropZone = null;
 	if (selectedFile) {
-		// console.log(data)
+		// console.log(input, input.value[0].preview)
 		bodyDropZone = (
 			<div className="avatar img-thumbnail">
 				<img src={selectedFile.preview ? selectedFile.preview : 'http://localhost:3000/img/' + selectedFile} />
@@ -74,7 +73,7 @@ const input = (data) => {
 	}
 	return (
 		<FormGroup>
-			<input type="hidden" disabled {...input} />
+			<input name="photo_url" type="hidden" disabled {...input} />
 			<Dropzone {...dropzoneProps}>
 				{bodyDropZone}
 			</Dropzone>

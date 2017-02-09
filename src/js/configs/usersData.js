@@ -768,5 +768,12 @@ const list_departments = [{
 	'parent_department_id': '1'
 }]
 
+// list_grades (Огр.уровни, грейды)
+// ==============
+// ID
+// grade (number)
+// coefficient (float)
+// ==============
+
 // console.log(data_users, list_positions, list_departments)
 export { data_users, list_positions, list_departments }

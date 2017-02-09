@@ -4,7 +4,7 @@ import { SubmissionError } from 'redux-form'
 import { browserHistory } from 'react-router'
 
 import { axiosDefaults, core as coreConfig } from '../configs/core'
-import { data_users, list_positions, list_departments } from '../configs/usersData'
+import { data_users as data_users_initial, list_positions, list_departments } from '../configs/usersData'
 
 // CONSTANTS
 export const AUTH_LOGIN_REQUEST = 'doalloc/auth/AUTH_LOGIN_REQUEST'
@@ -46,10 +46,10 @@ export function login( req, dispatch ) {
 		// browserHistory.push('/')
 		// Операция на время отсутсвия бекенда. Ищем юзера из файла и отдаем в redux
 		// // -------------------------------
-		let thisUser = null
 		// Есть баг, изменяется изначальный объект с юзерами. И нужные поля пустые.
-		thisUser = _.find(data_users, {email: sendUser.email, password: sendUser.password})
-		console.log(data_users, thisUser, thisUser.id)
+		// const thisUser = _.find(data_users_initial, {email: sendUser.email, password: sendUser.password})
+		const thisUser = Object.assign({}, _.find(data_users_initial, {email: sendUser.email, password: sendUser.password}))
+		// console.log(JSON.parse(JSON.stringify(data_users_initial[38])))
 		if (thisUser && thisUser.email) {
 			const thisPosition = _.find(list_positions, {id: Number(thisUser.position)})
 			let thisDepartment = null
