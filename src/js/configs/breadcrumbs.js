@@ -4,7 +4,8 @@ const transfer = {
 	'mark': 'Деловая оценка',
 	'allocation': 'Аллокации',
 	'profile': 'Профиль',
-	'add': 'Добавить'
+	'add': 'Добавить',
+	'grades': 'Грейды'
 }
 
 export { transfer }

@@ -33,6 +33,7 @@ class TopNav extends Base {
 		// const placeholder = <FormattedMessage id="nav.search" />
 
 		const auth = _.get(props, 'auth', {})
+		const {role} = auth
 		const userName = [auth.first_name, auth.last_name].join(' ')
 
 		return (
@@ -63,6 +64,12 @@ class TopNav extends Base {
 							<li className="nav-item">
 								<Link to="/allocation" className="nav-link" activeClassName="on">Аллокации</Link>
 							</li>
+							{
+								role === 'admin' ?
+								<li className="nav-item">
+									<Link to="/grades" className="nav-link" activeClassName="on">Грейды</Link>
+								</li> : null
+							}
 							{
 								auth.manager ?
 									<li className="nav-item">

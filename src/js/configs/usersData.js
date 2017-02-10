@@ -8,6 +8,7 @@
 // position -> list_positions (должность)
 // department_id -> list_departments (отдел)
 // password
+
 const data_users = [{
 	'id': 1,
 	'first_name': 'Виктория',
@@ -16,8 +17,9 @@ const data_users = [{
 	'email': 'vvarabina@dasreda.ru',
 	'position': 1,
 	'department_id': 6,
-	'grades_id': null,
+	'grades_id': 16,
 	'password': 'bp7L3za1',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 2,
@@ -27,8 +29,9 @@ const data_users = [{
 	'email': 'esbarysheva@dasreda.ru',
 	'position': 2,
 	'department_id': 6,
-	'grades_id': null,
+	'grades_id': 13,
 	'password': 'RgBgvEBF',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 3,
@@ -38,8 +41,9 @@ const data_users = [{
 	'email': 'evbachinina@dasreda.ru',
 	'position': 3,
 	'department_id': 10,
-	'grades_id': null,
+	'grades_id': 1,
 	'password': 'rd4Y0Cx3',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 4,
@@ -49,8 +53,9 @@ const data_users = [{
 	'email': 'opbelenko@dasreda.ru',
 	'position': 4,
 	'department_id': 8,
-	'grades_id': null,
+	'grades_id': 5,
 	'password': '53tP9Wsq',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 5,
@@ -60,8 +65,9 @@ const data_users = [{
 	'email': 'isburtnik@dasreda.ru',
 	'position': 5,
 	'department_id': '5,6,7',
-	'grades_id': null,
+	'grades_id': 8,
 	'password': '3fvrNVle',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 6,
@@ -71,8 +77,9 @@ const data_users = [{
 	'email': 'asvolchenkov@dasreda.ru',
 	'position': 6,
 	'department_id': 3,
-	'grades_id': null,
+	'grades_id': 18,
 	'password': 'XPAd5M1N',
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 7,
@@ -83,7 +90,8 @@ const data_users = [{
 	'department_id': 2,
 	'password': 'YBWnPTFg',
 	'email': 'AVVoronin@dasreda.ru',
-	'grades_id': null,
+	'grades_id': 6,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 8,
@@ -94,7 +102,8 @@ const data_users = [{
 	'last_name': 'Голованов',
 	'email': 'AAGolovanov@dasreda.ru',
 	'department_id': 3,
-	'grades_id': null,
+	'grades_id': 18,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 9,
@@ -105,7 +114,8 @@ const data_users = [{
 	'position': 7,
 	'department_id': 3,
 	'password': 'sFJ2TRYm',
-	'grades_id': null,
+	'grades_id': 17,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 10,
@@ -116,7 +126,8 @@ const data_users = [{
 	'position': '8',
 	'department_id': 7,
 	'password': 'qWH6TSrg',
-	'grades_id': null,
+	'grades_id': 15,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 11,
@@ -127,7 +138,8 @@ const data_users = [{
 	'position': 9,
 	'department_id': 10,
 	'password': 'RNfP6cVx',
-	'grades_id': null,
+	'grades_id': 1,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 12,
@@ -137,7 +149,8 @@ const data_users = [{
 	'email': 'EMDomnikov@dasreda.ru',
 	'position': 10,
 	'department_id': 4,
-	'grades_id': null,
+	'grades_id': 6,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'n3v58WaG'
 }, {
@@ -148,7 +161,8 @@ const data_users = [{
 	'email': 'EPEvseenko@dasreda.ru',
 	'position': 11,
 	'department_id': 3,
-	'grades_id': null,
+	'grades_id': 2,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'kcTBhwx7'
 }, {
@@ -159,7 +173,8 @@ const data_users = [{
 	'email': 'EVZhokov@dasreda.ru',
 	'position': 12,
 	'department_id': 9,
-	'grades_id': null,
+	'grades_id': 2,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'xH35SZNA'
 }, {
@@ -170,7 +185,8 @@ const data_users = [{
 	'email': 'NVZabolotskikh@dasreda.ru',
 	'position': 13,
 	'department_id': 6,
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null,
 	'password': '9SQMfLTV'
 }, {
@@ -181,7 +197,8 @@ const data_users = [{
 	'email': 'aaignatov@dasreda.ru',
 	'department_id': 9,
 	'position': 14,
-	'grades_id': null,
+	'grades_id': 4,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'ycCnxYbM'
 }, {
@@ -192,7 +209,8 @@ const data_users = [{
 	'email': 'ALIlin@dasreda.ru',
 	'position': 7,
 	'department_id': 3,
-	'grades_id': null,
+	'grades_id': 17,
+	'role': 'user',
 	'photo_url': null,
 	'password': '38dRCQLN'
 }, {
@@ -203,7 +221,8 @@ const data_users = [{
 	'email': 'KAKandayan@dasreda.ru',
 	'position': 1,
 	'department_id': 7,
-	'grades_id': null,
+	'grades_id': 15,
+	'role': 'user',
 	'photo_url': null,
 	'password': '4q2DaIsn'
 }, {
@@ -214,7 +233,8 @@ const data_users = [{
 	'email': 'vgkichuk@dasreda.ru',
 	'position': 15,
 	'department_id': 3,
-	'grades_id': null,
+	'grades_id': 17,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'gvQHJFKc'
 }, {
@@ -225,7 +245,8 @@ const data_users = [{
 	'email': 'AMKleyman@dasreda.ru',
 	'department_id': 5,
 	'position': 13,
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'XNKGan8R'
 }, {
@@ -236,7 +257,8 @@ const data_users = [{
 	'email': 'DVKozlov@dasreda.ru',
 	'department_id': 7,
 	'position': 8,
-	'grades_id': null,
+	'grades_id': 5,
+	'role': 'user',
 	'photo_url': null,
 	'password': 'PA4Wrxmn'
 }, {
@@ -248,7 +270,8 @@ const data_users = [{
 	'department_id': 4,
 	'position': 16,
 	'password': 'ArtPnEY5',
-	'grades_id': null,
+	'grades_id': 3,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 23,
@@ -259,7 +282,8 @@ const data_users = [{
 	'position': 17,
 	'department_id': 6,
 	'password': '3AVET25D',
-	'grades_id': null,
+	'grades_id': 12,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 24,
@@ -270,7 +294,8 @@ const data_users = [{
 	'position': 18,
 	'department_id': 6,
 	'password': 'LPe63XH7',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 25,
@@ -281,7 +306,8 @@ const data_users = [{
 	'position': 19,
 	'department_id': 12,
 	'password': 'ykWCYUXa',
-	'grades_id': null,
+	'grades_id': 4,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 26,
@@ -291,8 +317,9 @@ const data_users = [{
 	'email': 'TVMishkina@dasreda.ru',
 	'position': 20,
 	'department_id': 11,
-	'password': 'akxK8NRf',
-	'grades_id': null,
+	'password': '123456',
+	'grades_id': 3,
+	'role': 'admin',
 	'photo_url': null
 }, {
 	'id': 27,
@@ -303,7 +330,8 @@ const data_users = [{
 	'position': 21,
 	'department_id': 8,
 	'password': 'KAaqbf2Q',
-	'grades_id': null,
+	'grades_id': 4,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 28,
@@ -314,7 +342,8 @@ const data_users = [{
 	'position': 13,
 	'department_id': 7,
 	'password': '9aGQStwW',
-	'grades_id': null,
+	'grades_id': 2,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 29,
@@ -325,7 +354,8 @@ const data_users = [{
 	'department_id': 5,
 	'email': 'EVNuridzhanova@dasreda.ru',
 	'password': 'hDPvE2Fk',
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 30,
@@ -336,7 +366,8 @@ const data_users = [{
 	'position': 13,
 	'department_id': 6,
 	'password': 'q8kGLYru',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 31,
@@ -347,7 +378,8 @@ const data_users = [{
 	'department_id': 5,
 	'position': 1,
 	'password': 'qxF4sBPw',
-	'grades_id': null,
+	'grades_id': 15,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 32,
@@ -358,7 +390,8 @@ const data_users = [{
 	'department_id': 3,
 	'position': 22,
 	'password': 'nZD9YbKC',
-	'grades_id': null,
+	'grades_id': 19,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 33,
@@ -369,7 +402,8 @@ const data_users = [{
 	'email': 'OAPoddubnyak@dasreda.ru',
 	'position': 23,
 	'password': 'TSXbI5ON',
-	'grades_id': null,
+	'grades_id': 12,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 34,
@@ -381,6 +415,7 @@ const data_users = [{
 	'department_id': 6,
 	'password': '9HUf7Gcy',
 	'grades_id': null,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 35,
@@ -391,7 +426,8 @@ const data_users = [{
 	'position': 25,
 	'department_id': 4,
 	'password': 'RdAZyYCN',
-	'grades_id': null,
+	'grades_id': 11,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 36,
@@ -402,7 +438,8 @@ const data_users = [{
 	'department_id': 7,
 	'position': 18,
 	'password': 'FS3hXwZ5',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 37,
@@ -413,7 +450,8 @@ const data_users = [{
 	'department_id': 4,
 	'position': 26,
 	'password': 'KAXFR45g',
-	'grades_id': null,
+	'grades_id': 2,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 38,
@@ -424,7 +462,8 @@ const data_users = [{
 	'department_id': 6,
 	'position': 25,
 	'password': 'fcvgLB4T',
-	'grades_id': null,
+	'grades_id': 11,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 39,
@@ -435,7 +474,8 @@ const data_users = [{
 	'position': 27,
 	'password': '123456',
 	'department_id': '8,9,10,11',
-	'grades_id': null,
+	'grades_id': 6,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 40,
@@ -446,7 +486,8 @@ const data_users = [{
 	'department_id': 6,
 	'position': 18,
 	'password': 'gN4CXc5f',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 41,
@@ -457,7 +498,8 @@ const data_users = [{
 	'position': 28,
 	'department_id': 3,
 	'password': '123456',
-	'grades_id': null,
+	'grades_id': 6,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 42,
@@ -468,7 +510,8 @@ const data_users = [{
 	'position': 13,
 	'department_id': 7,
 	'password': '2ADqYyd7',
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 43,
@@ -479,7 +522,8 @@ const data_users = [{
 	'position': 13,
 	'department_id': 6,
 	'password': 'YFufLPm3',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 44,
@@ -490,7 +534,8 @@ const data_users = [{
 	'department_id': 5,
 	'position': 29,
 	'password': 'bdXsnvQx',
-	'grades_id': null,
+	'grades_id': 12,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 45,
@@ -501,7 +546,7 @@ const data_users = [{
 	'position': 30,
 	'department_id': 1,
 	'password': '123456',
-	'grades_id': null,
+	'grades_id': 9,
 	'photo_url': 'default-avatar.jpg'
 }, {
 	'id': 46,
@@ -512,7 +557,8 @@ const data_users = [{
 	'department_id': 7,
 	'position': 2,
 	'password': 'KS4FDhrI',
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 47,
@@ -523,7 +569,8 @@ const data_users = [{
 	'position': 31,
 	'department_id': 4,
 	'password': 'gGIZrSsu',
-	'grades_id': null,
+	'grades_id': 3,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 48,
@@ -534,7 +581,8 @@ const data_users = [{
 	'department_id': 7,
 	'position': 18,
 	'password': 'pJwxXI4T',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 49,
@@ -545,7 +593,8 @@ const data_users = [{
 	'department_id': 6,
 	'position': 13,
 	'password': 'Tg4wpEGU',
-	'grades_id': null,
+	'grades_id': 14,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 50,
@@ -556,7 +605,8 @@ const data_users = [{
 	'department_id': 6,
 	'position': 23,
 	'password': 'RABfJmbP',
-	'grades_id': null,
+	'grades_id': 12,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 51,
@@ -566,7 +616,8 @@ const data_users = [{
 	'email': 'RPShpagin@dasreda.ru',
 	'position': 24,
 	'password': '6GdYtrIz',
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null,
 	'department_id': 6
 }, {
@@ -578,7 +629,8 @@ const data_users = [{
 	'position': 32,
 	'department_id': 3,
 	'password': '123456',
-	'grades_id': null,
+	'grades_id': 2,
+	'role': 'user',
 	'photo_url': null
 }, {
 	'id': 53,
@@ -589,7 +641,8 @@ const data_users = [{
 	'department_id': 6,
 	'position': 32,
 	'password': 'Nf5ZJSKA',
-	'grades_id': null,
+	'grades_id': 13,
+	'role': 'user',
 	'photo_url': null
 }]
 
@@ -775,5 +828,117 @@ const list_departments = [{
 // coefficient (float)
 // ==============
 
+// Ф - фронт –офис
+// Б – бэк-офис
+// ИТ - ит
+
+// 8б
+// 9б
+// 10б
+// 11б
+// 12б
+// 13б
+// 15б
+// 16б
+
+// 7б
+// 8ф
+// 9ф
+// 10ф
+// 11ф
+// 12ф
+// 13ф
+
+// 10ИТ
+// 11ИТ
+
+const subdivision_list = [{
+	'id': 1,
+	'name': 'Бэк-офис',
+	'abbreviation': 'б'
+}, {
+	'id': 2,
+	'name': 'Фронт–офис',
+	'abbreviation': 'ф'
+}, {
+	'id': 3,
+	'name': 'ИТ',
+	'abbreviation': 'ит'
+}]
+
+const grades_list = [{
+	'id': 1,
+	'value': 8,
+	'subdivision_id': 1
+}, {
+	'id': 2,
+	'value': 9,
+	'subdivision_id': 1
+}, {
+	'id': 3,
+	'value': 10,
+	'subdivision_id': 1
+}, {
+	'id': 4,
+	'value': 11,
+	'subdivision_id': 1
+}, {
+	'id': 5,
+	'value': 12,
+	'subdivision_id': 1
+}, {
+	'id': 6,
+	'value': 13,
+	'subdivision_id': 1
+}, {
+	'id': 7,
+	'value': 14,
+	'subdivision_id': 1
+}, {
+	'id': 8,
+	'value': 15,
+	'subdivision_id': 1
+}, {
+	'id': 9,
+	'value': 16,
+	'subdivision_id': 1
+}, {
+	'id': 10,
+	'value': 7,
+	'subdivision_id': 2
+}, {
+	'id': 11,
+	'value': 8,
+	'subdivision_id': 2
+}, {
+	'id': 12,
+	'value': 9,
+	'subdivision_id': 2
+}, {
+	'id': 13,
+	'value': 10,
+	'subdivision_id': 2
+}, {
+	'id': 14,
+	'value': 11,
+	'subdivision_id': 2
+}, {
+	'id': 15,
+	'value': 12,
+	'subdivision_id': 2
+}, {
+	'id': 16,
+	'value': 13,
+	'subdivision_id': 2
+}, {
+	'id': 17,
+	'value': 10,
+	'subdivision_id': 3
+}, {
+	'id': 18,
+	'value': 11,
+	'subdivision_id': 3
+}]
+
 // console.log(data_users, list_positions, list_departments)
-export { data_users, list_positions, list_departments }
+export { data_users, list_positions, list_departments, grades_list, subdivision_list }

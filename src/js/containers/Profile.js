@@ -87,6 +87,15 @@ class Profile extends React.Component {
 										disabled
 									/>
 									<label className="checkbox pull-left">
+										Грейд:
+									</label>
+									<FormInput
+										type="text"
+										name="grades_id"
+										className="form-control"
+										disabled
+									/>
+									<label className="checkbox pull-left">
 										Пароль:
 									</label>
 									<FormInput

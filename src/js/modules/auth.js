@@ -4,7 +4,7 @@ import { SubmissionError } from 'redux-form'
 import { browserHistory } from 'react-router'
 
 import { axiosDefaults, core as coreConfig } from '../configs/core'
-import { data_users as data_users_initial, list_positions, list_departments } from '../configs/usersData'
+import { data_users as data_users_initial, list_positions, list_departments, grades_list, subdivision_list } from '../configs/usersData'
 
 // CONSTANTS
 export const AUTH_LOGIN_REQUEST = 'doalloc/auth/AUTH_LOGIN_REQUEST'
@@ -76,6 +76,12 @@ export function login( req, dispatch ) {
 				thisUser.manager = true
 			} else {
 				thisUser.manager = false
+			}
+
+			if (thisUser.grades_id) {
+				const grade = _.find(grades_list, {id: thisUser.grades_id})
+				const subdivision = _.find(subdivision_list, {id: grade.subdivision_id})
+				thisUser.grades_id = grade.value + subdivision.abbreviation
 			}
 			thisUser.api_token = '702fcfec738f4cfa8f6b48c2a56b9534'
 			// console.log(thisUser)
