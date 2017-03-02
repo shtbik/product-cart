@@ -22,7 +22,7 @@ class Footer extends React.Component {
 			<div className="footer">
 				<div className="container">
 					<div className="pull-left">
-						<strong>Copyright</strong> © АО «Деловая среда»
+						<strong>Copyright</strong> © Aleksandr Shtykov
 					</div>
 					<div className="pull-right">
 						<span className={cn('label', {'label-success': !serverVersionIsAhead, 'label-danger': serverVersionIsAhead})}>

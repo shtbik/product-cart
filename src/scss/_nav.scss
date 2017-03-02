@@ -39,6 +39,20 @@
 					padding: 0;
 				}
 			}
+
+			.label-cart {
+				display: inline;
+			    padding: .2em .6em .3em;
+			    line-height: 1;
+			    color: #fff;
+			    text-align: center;
+			    white-space: nowrap;
+			    vertical-align: baseline;
+			    border-radius: 1em;
+			    background-color: #025aa5;
+			    border-color: #01549b;
+			    margin: 0 5px 0 10px;
+			}
 		}
 	}
 }

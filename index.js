@@ -21,37 +21,6 @@ app.get('*', function(request, response){
   response.sendFile(__dirname + '/static/index.html')
 })
 
-app.post('/reg', function(req, res) {
-	var status = {
-		code: 200,
-		message: 'Пользователь успешно создан'
-	}
-	var pathUsers = './src/js/configs/users.js'
-	var dataUsers = req.body
-	var configJSON = JSON.stringify(dataUsers);
-
-	if (dataUsers) {
-		fs.readFile(pathUsers, {encoding: 'utf8'}, function (err, data) {
-			if(err) {
-				status.code = 500
-				status.message = 'Ошибка чтения файла'
-				res.json(status)
-			} else {
-				var config = JSON.parse(data)
-				config.push(dataUsers)
-				var configJSON = JSON.stringify(config)
-				fs.writeFileSync(pathUsers, configJSON)
-				status.newUsers = config
-				res.json(status)
-			}
-		})
-	} else {
-		status.code = 500
-		status.message = 'Ошибка, пользователь не создан'
-		res.json(status);
-	}
-})
-
 app.post('/api/post', function(req, res) {
 	var status = {
 		code: 200,

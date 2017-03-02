@@ -1,6 +1,6 @@
 {
-  "name": "dsdoalloc",
-  "version": "0.0.2",
+  "name": "testcart",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "start": "node index.js",

@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import TopNav from './TopNav'
-import BreadCrumbs from './BreadCrumbs'
 import Footer from './Footer'
-// import { createSelector } from 'reselect'
-// const refreshInterval = 300000 * 1 // every minute
 
 class App extends React.Component {
 
@@ -17,7 +14,6 @@ class App extends React.Component {
 			<div>
 				<TopNav/>
 				<div className="container main-container">
-					<BreadCrumbs/>
 					<div className="row">
 						<div className="col-sm-12 col-md-12">
 							{this.props.children}
@@ -30,11 +26,4 @@ class App extends React.Component {
 	}
 }
 
-// const selector = createSelector(
-// 	( state ) => state.meta,
-// 	( meta ) => {
-// 		return { meta }
-// 	}
-// )
-// const mapStateToProps = ( state ) => ({ ...selector(state) })
 export default connect()(App)

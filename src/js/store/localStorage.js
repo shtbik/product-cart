@@ -2,9 +2,9 @@ import * as storage from 'redux-storage'
 import createEngine from 'redux-storage-engine-localstorage'
 
 import coreConfig from '../configs/core'
-import { AUTH_LOGIN_RECEIVE } from '../modules/auth'
+import { ADD_CART_RECEIVE, CHANGE_CART_COUNT_RECEIVE, DELETE_CART_ITEM_RECEIVE } from '../modules/cart'
 
 const storageEngine = createEngine(coreConfig.localStorage.name)
-const storageMiddleware = storage.createMiddleware(storageEngine, [], [AUTH_LOGIN_RECEIVE])
+const storageMiddleware = storage.createMiddleware(storageEngine, [], [ADD_CART_RECEIVE, CHANGE_CART_COUNT_RECEIVE, DELETE_CART_ITEM_RECEIVE])
 
 export default storageMiddleware

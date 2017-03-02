@@ -8,121 +8,76 @@ body {
 		min-height: 80vh;
 	}
 
-	.login {
-
-		.container {
-			display: table;
-	    height: 100vh;
-
-	    > .row {
-	    	display: table-cell;
-	    	vertical-align: middle;
-
-	    	.col-md-4 {
-					margin: auto;
-				}
-	    } 
-		}
-	}
-
-	.registration {
-		@extend .login;
-		padding: 30px 0;
-
-		.container {
-
-	    .row {
-
-	    	.col-md-8 {
-					margin: auto;
-
-					.form-signin {
-						max-width: 100%;
-
-						input {
-							margin-bottom: 15px;
-
-							&[type="text"] {
-								border-bottom-left-radius: 0.25rem;
-	    					border-bottom-right-radius: 0.25rem;
-							}
-						}
-
-						label {
-							margin-bottom: 5px;
-						}
+	.container-catalog {
+		
+		.products {
+			margin-top: 40px;
+			
+			.product {
+				padding: 0 30px;
+				
+				.main-image {
+					height: 210px;
+					
+					img {
+						display: block;
+		    			margin: auto;
 					}
 				}
-	    } 
+
+				.name {
+					font-size: 18px;
+					margin-top: 10px;
+					font-weight: bold;
+				}
+
+				.label-tag {
+					background-color: #777;
+					display: inline;
+				    padding: .2em .6em .3em;
+				    line-height: 1;
+				    color: #fff;
+				    text-align: center;
+				    white-space: nowrap;
+				    vertical-align: baseline;
+				    border-radius: .25em;
+				}
+
+				.price {
+					text-align: right;
+					font-size: 18px;
+				}
+
+				button {
+					display: inline-block;
+	    			margin-top: 20px;
+	    			color: white;
+				}
+			}	
 		}
 	}
 
-	.profile {
-		margin-top: 14px;
+	.container-cart {
 
-		.form-group {
-
-			input[name="photo_url"] + div {
-				border-color: rgba(255, 255, 255, 0)!important;
-				width: 230px!important;
-		    height: 230px!important;
-		    margin: auto!important;
-			}
+		h3.text-center {
+			margin-bottom: 40px;
 		}
-
-		.avatar {
-			width: 230px;
-	    max-width: 100%;
-	    height: 230px;
-	    position: relative;
-	    display: table;
-	    cursor: cell;
-
-	    div {
-	    	display: table-cell;
-	    	vertical-align: middle;
-
-	    	span {
-	    		display: block;
-	    	}
-	    }
-
-			// p {
-			// 	line-height: 230px;
-
-			// 	span {
-			// 		line-height: inherit;
-			// 	}
-			// }
-
+		
+		.table-cart {
+			
 			img {
+				width: 100px;
 				max-width: 100%;
-				height: 100%;
-				border-radius: 5px;
 			}
-		}
 
-		h6 {
-			margin-bottom: 20px;
-		}
-
-		.btn {
-			margin-top: 20px;
-		}
-	}
-
-	.tests {
-
-		h3 {
-			margin-bottom: 20px;
-		}
-	}
-
-	.mark {
-		background-color: transparent;
-
-		.btn-success {
-			margin-bottom: 20px;
+			.vertical-center {
+				vertical-align: middle;
+				
+				input {
+					display: inline-block;
+					width: auto;
+				}
+			}	
 		}
 	}
 }

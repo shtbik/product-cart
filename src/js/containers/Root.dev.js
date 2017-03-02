@@ -5,7 +5,7 @@ import { Router } from 'react-router'
 // import { Notifs } from 'redux-notifications'
 // import auth from '../selectors/auth'
 import { Provider } from 'react-redux'
-import { AppRoutes, AuthRoutes, NoMatchRoute } from '../routes'
+import { AppRoutes, NoMatchRoute } from '../routes'
 import DevTools from './DevTools'
 
 export default class Root extends React.Component {
@@ -22,7 +22,6 @@ export default class Root extends React.Component {
 				<div>
 					<Router history={history}>
 						{AppRoutes}
-						{AuthRoutes}
 						{NoMatchRoute}
 					</Router>
 					<DevTools />

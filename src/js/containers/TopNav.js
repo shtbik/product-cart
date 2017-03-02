@@ -1,40 +1,43 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Link, IndexLink } from 'react-router'
-// import { FormattedMessage } from 'react-intl'
 import _ from 'lodash'
+import { createSelector } from 'reselect'
+import { Link, IndexLink } from 'react-router'
 
-import Base from './Base'
-// import SearchForm from './SearchForm'
-// import { changeLocale } from '../modules/intl'
-import { login, logout } from '../modules/auth'
+class TopNav extends React.Component {
 
-class TopNav extends Base {
-
-	componentDidMount() {
-		// console.log(this.props)
+	static propTypes = {
+		dispatch: PropTypes.func.isRequired,
+		cart: PropTypes.array.isRequired
 	}
 
-	handleClick(to) {
-		console.log(to)
-		if (to === 'logout') {
-			this.props.dispatch(logout())
-		}	else if (to === 'login') {
-			this.props.dispatch(login())
-		}
-	}
+	// componentWillReceiveProps(nextProps) {
+	// 	console.log('AddCart', nextProps.cart)
+		// console.log('asd', nextProps.cart)
+		// if (nextProps.cart !== this.props.cart) {
+		// }
+	// }
+
+	// handleClick(to) {
+	// 	console.log(to)
+	// 	if (to === 'logout') {
+	// 		this.props.dispatch(logout())
+	// 	}	else if (to === 'login') {
+	// 		this.props.dispatch(login())
+	// 	}
+	// }
 
 	// changeLocale(locale) {
 	// 	this.props.dispatch(changeLocale({locale: locale}))
 	// }
 
 	render() {
-		const props = this.props
-		// const placeholder = <FormattedMessage id="nav.search" />
-
-		const auth = _.get(props, 'auth', {})
-		const {role} = auth
-		const userName = [auth.first_name, auth.last_name].join(' ')
+		const { cart } = this.props
+		let productInCart = 0
+		_.forEach(cart, function(item) {
+			productInCart += item.count
+		})
+		// console.log(productInCart)
 
 		return (
 			<nav className="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -51,48 +54,25 @@ class TopNav extends Base {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<a href="#" className="navbar-brand">
-						<img src="/img/logo.png" />
+						LogoCompany
 					</a>
 					<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item">
-								<IndexLink to="/" className="nav-link" activeClassName="on">Главная</IndexLink>
-							</li>
-							<li className="nav-item">
-								<Link to="/mark" className="nav-link" activeClassName="on">Оценка</Link>
-							</li>
-							<li className="nav-item">
-								<Link to="/allocation" className="nav-link" activeClassName="on">Аллокации</Link>
-							</li>
-							{
-								role === 'admin' ?
-								<li className="nav-item">
-									<Link to="/grades" className="nav-link" activeClassName="on">Грейды</Link>
-								</li> : null
-							}
-							{
-								auth.manager ?
-									<li className="nav-item">
-										<Link to="/employees" className="nav-link" activeClassName="on">Сотрудники в подчинении</Link>
-									</li>
-								: null
-							}
-							<li className="nav-item">
-								<Link to="/graphics" className="nav-link" activeClassName="on">Графики результативности</Link>
+								<IndexLink to="/" className="nav-link" activeClassName="on">Index</IndexLink>
 							</li>
 						</ul>
 						<span className="form-inline my-2 my-lg-0">
 							<ul className="nav profile-widget">
 								<li>
-									<Link to="/profile" activeClassName="on" className="nav-link">
-										<i className="fa fa-user">&nbsp;</i> {userName}
+									<Link to="/cart" activeClassName="on" className="nav-link">
+										Cart
+										{cart && cart.length && productInCart ?
+											<span className="label-cart">{productInCart}</span>
+											: null
+										}
+										&nbsp;<i className="fa fa-shopping-basket"></i>
 									</Link>
-								</li>
-								<li>
-									<a onClick={this.handleClick.bind(this, 'logout')}>
-										<i className="fa fa-sign-out"></i>
-										Выйти
-									</a>
 								</li>
 							</ul>
 						</span>
@@ -123,9 +103,11 @@ class TopNav extends Base {
 	}
 }
 
-export default connect( state => {
-	return {
-		// intl: state.intl,
-		nav: state.nav,
-		auth: state.auth}
-}, null, null, { pure: false })(TopNav)
+const selector = createSelector(
+	( state ) => state.cart,
+	( cart ) => {
+		return { cart }
+	}
+)
+const mapStateToProps = ( state ) => ({ ...selector(state) })
+export default connect(mapStateToProps, null, null, { pure: false })(TopNav)
