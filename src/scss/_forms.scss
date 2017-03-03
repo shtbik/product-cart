@@ -1,0 +1,120 @@
+
+.login, .registration {
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+
+        .form-signin-heading {
+            margin-bottom: 10px;
+        }
+
+        .checkbox {
+            font-weight: normal;
+        }
+
+        .form-control {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            &:focus {
+                z-index: 2;
+            }
+        }
+
+        input {
+
+            &[type="checkbox"] {
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+        }
+
+        button {
+            margin: 15px 0;
+        }
+    }
+
+    .account-wall {
+        margin-top: 20px;
+        padding: 40px 15px 20px;
+        background-color: #f7f7f7;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-img {
+        width: auto;
+        height: 80px;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    .need-help {
+        float: right;
+    }
+
+    .new-account {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+.table-striped {
+    
+    .bg-primary {
+        color: white;
+    }
+
+    tbody tr {
+
+        &.background-none {
+            background: none!important;
+
+            td {
+                border: none;
+                padding: 0.75rem 0;
+            }
+        }
+
+        &:nth-of-type(even) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:nth-of-type(odd) {
+            background-color: transparent;
+        }
+    }
+}
+
+textarea {
+    margin-bottom: 20px;
+}
+
+form {
+    .alert-danger {
+        margin-top: 20px;
+    }
+
+    .form-group {
+
+        &.has-error {
+
+            input, select, textarea {
+                border: 1px solid red;
+
+                &::-webkit-input-placeholder {color:#c0392b;}
+                &::-moz-placeholder          {color:#c0392b;}/* Firefox 19+ */
+                &:-moz-placeholder           {color:#c0392b;}/* Firefox 18- */
+                &:-ms-input-placeholder      {color:#c0392b;}
+            }
+        }
+    }
+}

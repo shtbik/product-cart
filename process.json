@@ -1,0 +1,27 @@
+{
+  "apps": [{
+    "name": "test",
+    "script"      : "index.js",
+    "watch"       : true,
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 3000
+    },
+    "env_production" : {
+       "NODE_ENV": "production",
+       "PORT": 3000
+    }
+  }, {
+    "name": "test.production",
+    "script"      : "index.js",
+    "watch"       : true,
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 3333
+    },
+    "env_production" : {
+       "NODE_ENV": "production",
+       "PORT": 3333
+    }
+  }]
+}
