@@ -11,7 +11,6 @@ var port = 3001
 app.use(cors())
 app.use(bodyParser.json())
 
-
 app.get('*', function(req, res){
 	res.json({type: 'get'})
 })
@@ -33,7 +32,6 @@ app.post('/api/config', function( req, res ){
 		status.code = 500
 		status.message = 'empty_param'
 	}
-
 
 	res.json(status)
 })
@@ -64,12 +62,8 @@ app.post('/api/locale', function( req, res ){
 		})
 	})
 
-
 	console.log(docs)
 	console.log(req.body)
-
-
-
 	res.json(req.body)
 })
 

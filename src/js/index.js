@@ -6,8 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import store from './store'
 import Root from './containers/Root'
-import '../scss/index.scss';
-// import DevTools from './containers/DevTools'
+import '../scss/index.scss'
 
 const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(

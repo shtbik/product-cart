@@ -1,5 +1,4 @@
 
-
 .login, .registration {
 
     .form-signin {
@@ -30,18 +29,6 @@
         }
 
         input {
-
-            // &[type="text"] {
-            //     margin-bottom: -1px;
-            //     border-bottom-left-radius: 0;
-            //     border-bottom-right-radius: 0;
-            // }
-
-            // &[type="password"] {
-            //     margin-bottom: 10px;
-            //     border-top-left-radius: 0;
-            //     border-top-right-radius: 0;
-            // }
 
             &[type="checkbox"] {
                 margin-right: 5px;
@@ -122,7 +109,6 @@ form {
 
             input, select, textarea {
                 border: 1px solid red;
-
 
                 &::-webkit-input-placeholder {color:#c0392b;}
                 &::-moz-placeholder          {color:#c0392b;}/* Firefox 19+ */

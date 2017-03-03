@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 import _ from 'lodash'
+import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { Link, IndexLink } from 'react-router'
 
@@ -11,25 +11,11 @@ class TopNav extends React.Component {
 		cart: PropTypes.array.isRequired
 	}
 
-	// componentWillReceiveProps(nextProps) {
-	// 	console.log('AddCart', nextProps.cart)
-		// console.log('asd', nextProps.cart)
-		// if (nextProps.cart !== this.props.cart) {
-		// }
-	// }
-
-	// handleClick(to) {
-	// 	console.log(to)
-	// 	if (to === 'logout') {
-	// 		this.props.dispatch(logout())
-	// 	}	else if (to === 'login') {
-	// 		this.props.dispatch(login())
-	// 	}
-	// }
-
-	// changeLocale(locale) {
-	// 	this.props.dispatch(changeLocale({locale: locale}))
-	// }
+	clearUpdate() {
+		// I can programmatically clear redux
+		localStorage.clear()
+		location.reload()
+	}
 
 	render() {
 		const { cart } = this.props
@@ -37,10 +23,9 @@ class TopNav extends React.Component {
 		_.forEach(cart, function(item) {
 			productInCart += item.count
 		})
-		// console.log(productInCart)
 
 		return (
-			<nav className="navbar navbar-toggleable-md navbar-light bg-faded">
+			<nav className="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
 				<div className="container">
 					<button
 						className="navbar-toggler navbar-toggler-right"
@@ -61,6 +46,9 @@ class TopNav extends React.Component {
 							<li className="nav-item">
 								<IndexLink to="/" className="nav-link" activeClassName="on">Index</IndexLink>
 							</li>
+							<li className="nav-item">
+								<Link onClick={::this.clearUpdate} className="nav-link" activeClassName="on">Clear & Update</Link>
+							</li>
 						</ul>
 						<span className="form-inline my-2 my-lg-0">
 							<ul className="nav profile-widget">
@@ -78,26 +66,6 @@ class TopNav extends React.Component {
 						</span>
 					</div>
 				</div>
-
-				{ /* <div className="row border-bottom">
-					<nav className="navbar navbar-static-top" role="navigation" style={{marginBottom: 0}}>
-						<div className="navbar-header">
-								<a className="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i className="fa fa-bars"></i></a>
-								<SearchForm placeholder={placeholder} />
-						</div>
-						<ul className="nav navbar-top-links navbar-right">
-							<li>
-								<i className="fa fa-user">&nbsp;</i> {userName}
-							</li>
-							<li>
-								<a onClick={this.handleClick.bind(this, 'logout')}>
-									<i className="fa fa-sign-out"></i>
-									Выйти
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div> */ }
 			</nav>
 		)
 	}
@@ -110,4 +78,4 @@ const selector = createSelector(
 	}
 )
 const mapStateToProps = ( state ) => ({ ...selector(state) })
-export default connect(mapStateToProps, null, null, { pure: false })(TopNav)
+export default connect(mapStateToProps)(TopNav)

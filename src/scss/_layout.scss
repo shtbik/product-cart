@@ -1,83 +1,95 @@
 
-
-
 body {
 
 	.main-container {
+		position: relative;
+    margin-top: 10vh;
 		padding-top: 20px;
 		min-height: 80vh;
-	}
 
-	.container-catalog {
-		
-		.products {
-			margin-top: 40px;
+		.container-catalog {
+
+			.filter {
+
+				select {
+					display: inline-block;
+    			width: auto;
+				}
+			}
 			
-			.product {
-				padding: 0 30px;
+			.products {
+				margin-top: 40px;
 				
-				.main-image {
-					height: 210px;
+				.product {
+					padding: 0 30px;
+					margin-bottom: 50px;
 					
-					img {
-						display: block;
-		    			margin: auto;
+					.main-image {
+						height: 210px;
+						display: flex;
+				    align-items: center;
+				    text-align: center;
+						
+						img {
+							display: block;
+			    		margin: auto;
+						}
 					}
-				}
 
-				.name {
-					font-size: 18px;
-					margin-top: 10px;
-					font-weight: bold;
-				}
+					.name {
+						margin-top: 10px;
+						font-size: 18px;
+						font-weight: bold;
+					}
 
-				.label-tag {
-					background-color: #777;
-					display: inline;
+					.label-tag {
+						display: inline;
 				    padding: .2em .6em .3em;
 				    line-height: 1;
+				    background-color: #777;
 				    color: #fff;
 				    text-align: center;
 				    white-space: nowrap;
 				    vertical-align: baseline;
 				    border-radius: .25em;
-				}
+					}
 
-				.price {
-					text-align: right;
-					font-size: 18px;
-				}
+					.price {
+						text-align: right;
+						font-size: 18px;
+					}
 
-				button {
-					display: inline-block;
+					button {
+						display: inline-block;
 	    			margin-top: 20px;
 	    			color: white;
-				}
-			}	
-		}
-	}
-
-	.container-cart {
-
-		h3.text-center {
-			margin-bottom: 40px;
-		}
-		
-		.table-cart {
-			
-			img {
-				width: 100px;
-				max-width: 100%;
+					}
+				}	
 			}
+		}
 
-			.vertical-center {
-				vertical-align: middle;
-				
-				input {
-					display: inline-block;
-					width: auto;
+		.container-cart {
+
+			h3.text-center {
+				margin-bottom: 40px;
+			}
+			
+			.table-cart {
+
+				td {
+					vertical-align: middle;
+
+					img {
+						width: 100px;
+						max-width: 100%;
+					}
+						
+					input {
+						display: inline-block;
+						width: auto;
+					}
 				}
-			}	
+			}
 		}
 	}
 }

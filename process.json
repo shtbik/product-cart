@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "pp.admin",
+    "name": "test",
     "script"      : "index.js",
     "watch"       : true,
     "env": {
@@ -12,7 +12,7 @@
        "PORT": 3000
     }
   }, {
-    "name": "pp.admin.production",
+    "name": "test.production",
     "script"      : "index.js",
     "watch"       : true,
     "env": {

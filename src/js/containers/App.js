@@ -12,15 +12,11 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<TopNav/>
+				<TopNav />
 				<div className="container main-container">
-					<div className="row">
-						<div className="col-sm-12 col-md-12">
-							{this.props.children}
-						</div>
-					</div>
+					{this.props.children}
 				</div>
-				<Footer/>
+				<Footer />
 			</div>
 		)
 	}

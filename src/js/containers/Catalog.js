@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 import _ from 'lodash'
+import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
-import { getProducts } from '../modules/products'
+import { getProducts, filterProductsFunc } from '../modules/products'
 import { addCart } from '../modules/cart'
 
 class Catalog extends React.Component {
@@ -20,6 +20,17 @@ class Catalog extends React.Component {
 		const { products } = this.props
 		const thisProduct = _.find(products, {id: productId})
 		this.props.dispatch(addCart(thisProduct))
+	}
+
+	filter(event) {
+		// not the most elegant solution :)
+		const initialProducts = JSON.parse(localStorage.getItem('initialProducts'))
+		if (initialProducts && initialProducts.length && event.target.value !== 'all') {
+			const filterProducts = _.filter(initialProducts, {'category': event.target.value})
+			this.props.dispatch(filterProductsFunc(filterProducts))
+		} else {
+			this.props.dispatch(filterProductsFunc(initialProducts))
+		}
 	}
 
 	render() {
@@ -48,12 +59,26 @@ class Catalog extends React.Component {
 				)
 			})
 			return (
-				<div className="container container-catalog">
+				<div className="container-catalog">
 					<div className="row">
 						<div className="col-sm-12 col-md-12">
 							<h3 className="text-center">Catalog Products</h3>
-							<div className="row products">
-								{productsDiv}
+							<div className="filter text-right">
+								Category:&nbsp;
+								<select
+									name="filter"
+									className="form-control"
+									onChange={::this.filter}
+								>
+									<option value="all">All</option>
+									<option value="laptop">Laptop</option>
+									<option value="phone">Phone</option>
+								</select>
+							</div>
+							<div className="products">
+								<div className="row">
+									{productsDiv}
+								</div>
 							</div>
 						</div>
 					</div>

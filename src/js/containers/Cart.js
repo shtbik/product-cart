@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 import _ from 'lodash'
+import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { changeCartCount, deleteCartItem } from '../modules/cart'
 
@@ -11,13 +11,6 @@ class Cart extends React.Component {
 		cart: PropTypes.array
 	}
 
-	// componentWillReceiveProps(nextProps) {
-		// console.log('ChangeCount', nextProps.cart)
-		// console.log('asd', nextProps.cart)
-		// if (nextProps.cart !== this.props.cart) {
-		// }
-	// }
-
 	onChange = (event) => {
 		const newValue = event.target.value
 		const productId = event.target.dataset.id
@@ -25,8 +18,6 @@ class Cart extends React.Component {
 		if (this.isNumeric(newValue) && newValue > 0) {
 			this.props.dispatch(changeCartCount(newValue, productId))
 		}
-		// console.log(newValue, productId)
-		// this.setState({text: value});
 	}
 
 	isNumeric = (n) => {
@@ -35,7 +26,6 @@ class Cart extends React.Component {
 
 	deleteToCart = (event) => {
 		const productId = event.target.dataset.id
-		// console.log(productId)
 		this.props.dispatch(deleteCartItem(productId))
 	}
 
@@ -49,13 +39,15 @@ class Cart extends React.Component {
 				totalPrice += item.price * item.count
 				return (
 					<tr key={key}>
-						<th scope="row">{key + 1}</th>
+						<td scope="row">
+							<b>{key + 1}</b>
+						</td>
 						<td>
 							<img src={`/img/${item.img}`} alt={item.name} />
 						</td>
 						<td>{item.name}</td>
 						<td>{item.price + '$'}</td>
-						<td className="vertical-center">
+						<td>
 							<input
 								type="text"
 								name="count"
@@ -65,7 +57,7 @@ class Cart extends React.Component {
 								onChange={::_this.onChange}
 							/>
 						</td>
-						<td className="vertical-center">
+						<td>
 							<button
 								className="btn btn-primary"
 								data-id={item.id}
@@ -77,7 +69,7 @@ class Cart extends React.Component {
 				)
 			})
 			return (
-				<div className="container container-cart">
+				<div className="container-cart">
 					<div className="row">
 						<div className="col-sm-12 col-md-12">
 							<h3 className="text-center">Your order</h3>
