@@ -29,7 +29,6 @@ app.post('/api/post', function(req, res) {
 	res.json(status);
 })
 
-
 // Сделано для того, чтобы отделить get и post запросы. На get запрос отдает код странички html
 app.post('/api/get', function(req, res) {
 	var status = {

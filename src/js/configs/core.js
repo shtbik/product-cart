@@ -1,12 +1,12 @@
 import _ from 'lodash'
 
 const getBaseUrl = function() {
-	const { protocol } = _.get(window, 'location', { protocol: '', location: '', port: '' })
+	const { protocol, host } = _.get(window, 'location', { protocol: '', location: '', port: '' })
 	// const { protocol, host }
-	// if (window && host.indexOf('test.ru') !== -1) {
-	// 	return `${protocol}//localhost:3000/api/`
-	// }
-	return `${protocol}//localhost:3000/api/`
+	if (window && host.indexOf('shtykov.com') !== -1) {
+		return `${protocol}//shtykov.com/`
+	}
+	return `/`
 }
 
 const axiosDefaults = {
