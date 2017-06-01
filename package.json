@@ -48,7 +48,11 @@
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4",
     "semver-compare": "^1.0.0",
-    "shallowequal": "^0.2.2"
+    "shallowequal": "^0.2.2",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.13.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
