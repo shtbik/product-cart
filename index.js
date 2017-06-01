@@ -7,7 +7,7 @@ var fs = require('fs')
 var bodyParser = require('body-parser')
 
 var app = new (express)()
-var port = process.env.PORT || 3000
+// var port = process.env.PORT || 3000
 var env = process.env.NODE_ENV || 'production'
 
 var compiler = webpack(config)
@@ -39,10 +39,6 @@ app.post('/api/get', function(req, res) {
 	res.json(status);
 })
 
-app.listen(port, function(error) {
-	if (error) {
-		console.error(error)
-	} else {
-		console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
-	}
-})
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
