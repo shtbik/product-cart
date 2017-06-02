@@ -10,8 +10,8 @@
     "webpack:prod:win": "set NODE_ENV=production&&webpack --progress",
     "webpack:prod:lin": "export NODE_ENV=production webpack --progress",
     "test": "mocha './src/**/*-test.js' --compilers js:babel-register",
-    "pm2": "pm2 start process.json --env production --only pp.admin",
-    "pm2:production": "pm2 start process.json --env production --only pp.admin.production"
+    "pm2": "pm2 start process.json --env --only test",
+    "pm2:production": "pm2 start process.json --env production --only test.production"
   },
   "private": true,
   "dependencies": {

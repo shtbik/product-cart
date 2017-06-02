@@ -2,10 +2,10 @@ import _ from 'lodash'
 
 const getBaseUrl = function() {
 	const { protocol, host } = _.get(window, 'location', { protocol: '', location: '', port: '' })
-	if (window && host.indexOf('herokuapp') !== -1) {
-		return `${protocol}//safe-atoll-35554.herokuapp.com/api/`
+	if (window && host.indexOf('shtykov') !== -1) {
+		return `${protocol}//node.shtykov.com/api/`
 	}
-	return `${protocol}//localhost:5000/api/`
+	return `${protocol}//localhost:3000/api/`
 }
 
 const axiosDefaults = {
