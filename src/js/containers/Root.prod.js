@@ -1,18 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Provider from './Provider'
+import React, { PropTypes } from 'react'
+import { Provider } from 'react-redux'
 import { Router } from 'react-router'
-import { Notifs } from 'redux-notifications'
 
-import { addLocaleData } from 'react-intl'
-import en from 'react-intl/locale-data/en'
-import ru from 'react-intl/locale-data/ru'
-addLocaleData([...ru, ...en])
-
-import { AppRoutes, NoMatchRoute, AuthRoutes } from '../routes'
-import Notification from '../components/Notification'
+import { AppRoutes, NoMatchRoute } from '../routes'
 
 export default class Root extends React.Component {
+
+	static propTypes = {
+		store: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+		history: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
+	}
+
 	render() {
 		const { store, history } = this.props
 		return (
@@ -20,11 +18,9 @@ export default class Root extends React.Component {
 				<div>
 					<Router history={history}>
 						{AppRoutes}
-						{AuthRoutes}
 						{NoMatchRoute}
 					</Router>
-					<Notifs CustomComponent={Notification} />
-				</div>	
+				</div>
 			</Provider>
 		)
 	}
