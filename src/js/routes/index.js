@@ -12,7 +12,7 @@ import NoMatch from '../components/NoMatch'
 const AppRoutes = (
 	<Route path="/" component={App}>
 		<IndexRoute component={Catalog} />
-		<Route path="/cart" component={Cart} />
+		<Route path="cart" component={Cart} />
 	</Route>
 )
 

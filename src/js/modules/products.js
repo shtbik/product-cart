@@ -30,7 +30,7 @@ export const receivefilterProducts = ( data ) => ({
 // -------ASYNC-------
 export function getProducts() {
 	return ( dispatch ) => {
-		return axiosInstance.get('/').then(( res ) => {
+		return axiosInstance.get('./').then(( res ) => {
 			console.log(res)
 			dispatch(receiveLoad(products_list))
 		}).catch(( res ) => {

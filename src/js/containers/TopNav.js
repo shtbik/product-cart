@@ -27,7 +27,7 @@ class TopNav extends React.Component {
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
 				<div className="container">
-					<IndexLink to="/" className="navbar-brand">
+					<IndexLink to="./" className="navbar-brand">
 						LogoCompany
 					</IndexLink>
 					<button
@@ -45,7 +45,7 @@ class TopNav extends React.Component {
 					<div className="collapse navbar-collapse" id="navbarsExample09">
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item">
-								<IndexLink to="/" className="nav-link" activeClassName="on">Index</IndexLink>
+								<IndexLink to="./" className="nav-link" activeClassName="on">Index</IndexLink>
 							</li>
 							<li className="nav-item">
 								<Link onClick={::this.clearUpdate} className="nav-link" activeClassName="on">Clear & Update</Link>
@@ -54,7 +54,7 @@ class TopNav extends React.Component {
 						<span className="form-inline my-2 my-lg-0">
 							<ul className="nav profile-widget">
 								<li>
-									<Link to="/cart" activeClassName="on" className="nav-link">
+									<Link to="./cart" activeClassName="on" className="nav-link">
 										Cart
 										{cart && cart.length && productInCart ?
 											<span className="label-cart">{productInCart}</span>
