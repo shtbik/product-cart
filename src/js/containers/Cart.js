@@ -43,7 +43,7 @@ class Cart extends React.Component {
 							<b>{key + 1}</b>
 						</td>
 						<td>
-							<img src={`/img/${item.img}`} alt={item.name} />
+							<img src={`/static/img/${item.img}`} alt={item.name} />
 						</td>
 						<td>{item.name}</td>
 						<td>{item.price + '$'}</td>
