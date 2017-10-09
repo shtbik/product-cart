@@ -18,9 +18,3 @@ Go to [Node JS](https://nodejs.org/en/) site and pick the last version
 	yarn install
 	yarn start
 	go to http://localhost:3000/
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> f27735bfd5218357b0b00e81ea7db1d2b6ab319d
-Webpack and babel have to be installed under admin (win) or su (mac/linux), all other packages need to be installed under a standard user.

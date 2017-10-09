@@ -26,7 +26,7 @@ var plugins = [
 	new VersionPlugin({ ver: pckg.version })
 ]
 
-if( isProd ) plugins.push(new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}))
+if ( isProd ) plugins.push(new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}))
 
 const entry = isProd ? ['./src/js/index.js'] : ['webpack-hot-middleware/client', './src/js/index.js']
 
@@ -64,7 +64,7 @@ module.exports = {
 	},
 
 	output: {
-		path: path.join(__dirname, 'static'),
+		path: path.join(__dirname, 'docs'),
 		filename: 'bundle.js',
 		publicPath: '/'
 	},
@@ -72,12 +72,12 @@ module.exports = {
 	plugins: plugins,
 
 	module: {
-		preLoaders: [	
+		preLoaders: [
 			{ test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }
 		],
 		loaders: [{
 			test: /\.(js|jsx)$/,
-			
+
 			loader: 'babel',
 			//query: {presets: ['react', 'es2015', 'stage-0']},
 			exclude: /node_modules/,
@@ -90,9 +90,9 @@ module.exports = {
 			test: /\.(css|scss)$/,
 			loaders: ['style', 'raw', 'sass'],
 			include: __dirname
-		}, { 
-			test: /\.json$/, 
-			loader: 'json' 
+		}, {
+			test: /\.json$/,
+			loader: 'json'
 		}]
 
 	},
