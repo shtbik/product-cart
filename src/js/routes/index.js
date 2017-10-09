@@ -10,7 +10,7 @@ import NoMatch from '../components/NoMatch'
 // import { products } from '../selectors/products'
 // <Route path="/" component={App} onEnter={authFunc.requireAuth}>
 const AppRoutes = (
-	<Route path="/" component={App}>
+	<Route path="/product-cart" component={App}>
 		<IndexRoute component={Catalog} />
 		<Route path="cart" component={Cart} />
 	</Route>
