@@ -7,7 +7,7 @@ var fs = require('fs')
 var bodyParser = require('body-parser')
 
 var app = new (express)()
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 3000
 var env = process.env.NODE_ENV || 'production'
 
 var compiler = webpack(config)
@@ -18,7 +18,7 @@ app.use(webpackHotMiddleware(compiler))
 app.use(express.static('docs'))
 app.use(bodyParser.json())
 app.get('*', function(request, response) {
-  		response.sendFile(__dirname + '/docs/index.html')
+  			response.sendFile(__dirname + '/docs/index.html')
 })
 
 app.post('/api/post', function(req, res) {
@@ -39,5 +39,5 @@ app.post('/api/get', function(req, res) {
 })
 
 app.listen(port, function() {
-  		console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
+  			console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
 });

@@ -1,9 +1,5 @@
 node_modules
 npm-debug.*
-static/*hot-update*
-static/*bundle*
-static/index.html
-static/meta.json
 server.crt
 server.csr
 server.key
