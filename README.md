@@ -2,7 +2,7 @@
 
 A test task for the implementation of the food basket. The application is built on the stack React + Redux. For convenience, the data is stored in localStorage.
 
-DEMO: https://shtbik.github.io/product-cart/
+DEMO: https://shtbik.github.io/
 
 ### **1. Install git**  
 Go to [git site](https://git-scm.com/downloads) and download/install a version for your OS
@@ -11,7 +11,7 @@ Go to [git site](https://git-scm.com/downloads) and download/install a version f
 Go to [Node JS](https://nodejs.org/en/) site and pick the last version
 
 ### **3. Clone the repository and install dependencies**
-	git clone https://github.com/shtbik/product-cart.git
+	git clone https://github.com/shtbik/shtbik.github.io.git
 	cd product-cart
 	yarn add --global webpack babel
 	yarn add --global --production windows-build-tools (for node-sass windows user)
