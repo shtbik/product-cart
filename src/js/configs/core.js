@@ -6,7 +6,7 @@ const getBaseUrl = function() {
 	if (window && host.indexOf('shtykov.com') !== -1) {
 		return `${protocol}//shtykov.com/`
 	}
-	return `/`
+	return `./`
 }
 
 const axiosDefaults = {
