@@ -15,10 +15,10 @@ var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath, lazy: false}))
 app.use(webpackHotMiddleware(compiler))
 
-app.use(express.static('docs'))
+app.use(express.static('static'))
 app.use(bodyParser.json())
 app.get('*', function(request, response) {
-  			response.sendFile(__dirname + '/docs/index.html')
+  			response.sendFile(__dirname + '/index.html')
 })
 
 app.post('/api/post', function(req, res) {
