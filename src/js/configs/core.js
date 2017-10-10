@@ -1,12 +1,12 @@
-import _ from 'lodash'
+// import _ from 'lodash'
 
 const getBaseUrl = function() {
-	const { protocol, host } = _.get(window, 'location', { protocol: '', location: '', port: '' })
+	// const { protocol, host } = _.get(window, 'location', { protocol: '', location: '', port: '' })
 	// const { protocol, host }
-	if (window && host.indexOf('shtykov.com') !== -1) {
-		return `${protocol}//shtykov.com/`
-	}
-	return `https://shtbik.github.io/`
+	// if (window && host.indexOf('shtykov.com') !== -1) {
+	// 	return `${protocol}//shtykov.com/`
+	// }
+	return `https://reqres.in/api/users`
 }
 
 const axiosDefaults = {

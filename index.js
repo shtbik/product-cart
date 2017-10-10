@@ -15,10 +15,10 @@ var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath, lazy: false}))
 app.use(webpackHotMiddleware(compiler))
 
-app.use(express.static('./'))
+app.use(express.static('./static'))
 app.use(bodyParser.json())
 app.get('*', function(request, response) {
-  					response.sendFile(__dirname + '/index.html')
+  						response.sendFile(__dirname + '/static/index.html')
 })
 
 app.post('/api/post', function(req, res) {
@@ -39,5 +39,5 @@ app.post('/api/get', function(req, res) {
 })
 
 app.listen(port, function() {
-  					console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
+  						console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
 });

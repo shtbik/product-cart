@@ -2,6 +2,23 @@
   "name": "cartreactredux",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shtbik/product-cart.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "es6",
+    "babel",
+    "webpack"
+  ],
+  "author": "Aleksandr Shtykov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shtbik/product-cart/issues"
+  },
+  "homepage": "https://github.com/shtbik/product-cart",
   "scripts": {
     "start": "node index.js",
     "start:prod:win": "set NODE_ENV=production&&node index.js",

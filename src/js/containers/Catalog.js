@@ -42,7 +42,7 @@ class Catalog extends React.Component {
 				return (
 					<div className="col-md-4 col-sm-4 product" key={key}>
 						<div className="main-image">
-							<img src={`./static/img/${item.img}`} alt={item.name} />
+							<img src={`/img/${item.img}`} alt={item.name} />
 						</div>
 						<p className="name">{item.name}</p>
 						<p>{item.description}</p>
