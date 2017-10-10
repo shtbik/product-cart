@@ -6,7 +6,6 @@ node_js:
 env:
   global:
     - GH_REF: github.com/shtbik/product-cart.git
-    - secure: cyRmLwgRuGsDz20mHQEoUatQgAIjEJ3+QPsE6+645az3pbXE3INVVdCXprE4xRmiYGF2YWrWj84IfnN+6oYNmXTXQb/rmcsBepJd9V0tSmeYTnPgWM7B+X5vMYVtLIVlvfXqb8lqpAeiOLxzOwSZkZoh3RCQxCgb4VsA94YUYx6a+o2uF5kYOKsPAOvoC1lciro8M0Yq1NlVpjw6TZDzFPbYdyAvNch4qiECd0eRBO62ZqxYQE2B5F2vu5tfsCOeUOc0NzIInoBZ3USTCE2YV6hWn8FJTK7DSk3flijx0hHkmW9gAOjjOT7309Cgu4xyfC0Elkwqq8EA4WHZsPTCFnU8a/XuBsHmxaaZfBE89HD9tZwk5HJLE5053y73EyKrrWOFycoZsWy1Y9HgrBFXoor8iQ6hPQPKY9hFtIHZ+89UoUsVVA2/r+l5VwPw/hKu4dRfLT4BWklczW3o8+fhDQqqZttibt+xpBuS8RUieyQLxRIAcGnCykMxIISWkIE581EOEmFTfqWD9eOjH24AUkLtwRmtY0CJp/qacTICRpfH34PiwnoYPvA2cPL0Hymnu19IOJ6QpjXMc2vzSPbw3TlCsQEDTKAlLT//1TlskdDKr67PZCvp9cA+fiIKcE3d7lDOKfu59//QvxYFPxen92nWkNbxl17xbKOUUizJWBg=
 
 before_install:
   - npm config set depth 0
@@ -21,6 +20,7 @@ script:
   - git config user.email "sashe4ka311@mail.ru"
   - git add ./index.html
   - git add -f static
+  - git add -f bundle
   - git commit -m "Deploy to GitHub Pages"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 
