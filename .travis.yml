@@ -19,6 +19,7 @@ script:
   - git config user.name "Aleksandr Shtykov"
   - git config user.email "sashe4ka311@mail.ru"
   - git add ./index.html
+  - git add ./CNAME
   - git add -f static
   - git add -f bundle
   - git commit -m "Deploy to GitHub Pages"
