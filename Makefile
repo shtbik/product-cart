@@ -1,5 +1,5 @@
 build:
-	rm -rf static; NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack.config.js
+	rm -rf static/bundle; NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack.config.js
 
 rebuild:
 	sudo rm -rf node_modules

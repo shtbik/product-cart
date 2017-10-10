@@ -7,8 +7,8 @@ function VersionPlugin( options ) {
 }
 
 VersionPlugin.prototype.apply = function(compiler) {
-  		compiler.plugin('done', function() {
-  			fs.writeFileSync('./static/index.html', html)
+  			compiler.plugin('done', function() {
+  				fs.writeFileSync('./index.html', html)
 	fs.writeFileSync('./static/meta.json', json)
   })
 }

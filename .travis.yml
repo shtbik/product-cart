@@ -19,7 +19,7 @@ script:
   - git init
   - git config user.name "Aleksandr Shtykov"
   - git config user.email "sashe4ka311@mail.ru"
-  - git add ./static/index.html
+  - git add ./index.html
   - git add -f static
   - git commit -m "Deploy to GitHub Pages"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
