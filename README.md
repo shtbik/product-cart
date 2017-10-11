@@ -2,7 +2,7 @@
 
 A test task for the implementation of the food basket. The application is built on the stack React + Redux. For convenience, the data is stored in localStorage.
 
-DEMO: https://shtbik.github.io/
+DEMO: http://shtykov.com/
 
 ### **1. Install git**  
 Go to [git site](https://git-scm.com/downloads) and download/install a version for your OS
