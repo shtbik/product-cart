@@ -20,3 +20,9 @@ Go to [Node JS](https://nodejs.org/en/) site and pick the latest version
 	yarn install
 	yarn start
 	go to http://localhost:3000/
+
+### **Authors**
+* Alexander Shtykov
+* Sergey Biryukov
+* Maxim Ilin
+
