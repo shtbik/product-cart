@@ -21,8 +21,8 @@ Go to [Node JS](https://nodejs.org/en/) site and pick the latest version
 	yarn start
 	go to http://localhost:3000/
 
-### **Authors**
-* Alexander Shtykov
-* Sergey Biryukov
-* Maxim Ilin
+### **Авторы**
+* Штыков Александр - frontend-разработчик, консалтинг
+* Бирюков Сергей - Координатор, backend-разработчик
+* Ильин Максим - Администратор(continuous integration), исследователь.
 
