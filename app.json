@@ -2,6 +2,7 @@
   "name": "product-cart",
   "description": "Heroku config",
   "scripts": {
+    "test": "echo \"Test\"",
     "postdeploy": "npm start"
   },
   "env": {
