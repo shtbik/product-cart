@@ -1,0 +1,19 @@
+{
+  "name": "product-cart",
+  "description": "Heroku config",
+  "scripts": {
+    "postdeploy": "npm start"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
