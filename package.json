@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/shtbik/product-cart/issues"
   },
-  "homepage": "https://github.com/shtbik/product-cart",
+  "homepage": "https://shtbik.github.io/product-cart",
   "scripts": {
     "start": "node index.js",
     "start:prod:win": "set NODE_ENV=production&&node index.js",
