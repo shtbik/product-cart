@@ -33,12 +33,11 @@ Thumbs.db
 bower_components
 app
 assets/bower
+static/js
 
 # Node.JS
 node_modules
 npm-debug.log
 
 #yarn
-yarn.lock
-
 package-lock.json
