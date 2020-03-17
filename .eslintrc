@@ -1,39 +1,71 @@
 {
-	"extends": "eslint-config-airbnb",
-	"env": {
-		"browser": false,
-		"node": true,
-		"mocha": true
-	},
+	"parser": "babel-eslint",
 	"rules": {
-		"react/no-multi-comp": 0,
-		"import/default": 0,
-		"import/no-duplicates": 0,
-		"import/named": 0,
-		"import/namespace": 0,
-		"import/no-unresolved": 0,
-		"import/no-named-as-default": 2,
-		"comma-dangle": 0, // not sure why airbnb turned this on. gross!
-		"indent": [2, "tab", { "SwitchCase": 1 }],
-		"no-debugger": 0,
-		"no-console": 0,
-		"no-alert": 0,
-		"camelcase": [0, { "properties": "never" }],
-		"id-length": [2, { "min": 1 }],
-		"semi": 0,
-		"func-names": 0,
-		"no-throw-literal": 0,
-		"no-shadow": 0
+		"import/prefer-default-export": "off",
+		"react/prefer-stateless-function": [
+			1,
+			{
+				"ignorePureComponents": true
+			}
+		],
+		"max-len": [
+			"error",
+			{
+				"code": 120,
+				"tabWidth": 2,
+				"ignoreComments": true,
+				"ignoreUrls": true,
+				"ignoreRegExpLiterals": true,
+				"ignoreStrings": true
+			}
+		],
+		"semi": ["error", "never"],
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"react/forbid-prop-types": [0],
+		"camelcase": [0],
+		"indent": [
+			1,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-tabs": 0,
+		"no-console": ["error", { "allow": ["warn", "error"] }],
+		"react/jsx-indent": [1, "tab"],
+		"react/jsx-indent-props": [1, "tab"],
+		"linebreak-style": [0, "unix"]
 	},
-	"plugins": ["react", "import"],
 	"settings": {
-		"import/parser": "babel-eslint",
-		"import/resolve": {
-			"moduleDirectory": ["node_modules", "src"]
+		"import/resolver": {
+			"node": {
+				"paths": ["src"]
+			}
 		}
 	},
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"jest": true
+	},
 	"globals": {
-		"socket": true,
-		"webpackIsomorphicTools": true
-	}
+		"__BASE_URL__": true,
+		"expect": true
+	},
+	"extends": ["airbnb", "prettier", "prettier/react"],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true
+		},
+		"ecmaVersion": 6
+	},
+	"plugins": ["react", "prettier"]
 }

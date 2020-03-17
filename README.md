@@ -1,25 +1,68 @@
-# Product cart with React Redux Localstorage
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-An implementation of the food basket. The application is built using the React + Redux stack. All the data is stored in localStorage for testing purposes.
+## Available Scripts
 
-LIVE DEMO: http://product-cart.shtykov.com/
+In the project directory, you can run:
 
-![alt tag](https://i.imgur.com/2Kx7380.png)
+### `yarn start`
 
-### **1. Install git**
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Go to [git site](https://git-scm.com/downloads) and download/install a version for your OS
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### **2. Install node**
+### `yarn test`
 
-Go to [Node JS](https://nodejs.org/en/) site and pick the latest version
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### **3. Clone the repository and install dependencies**
+### `yarn build`
 
-    git clone https://github.com/shtbik/product-cart.git
-    cd product-cart
-    yarn add --global webpack babel
-    yarn add --global --production windows-build-tools (for node-sass windows user)
-    yarn install
-    yarn start
-    go to http://localhost:3000/
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `yarn build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
