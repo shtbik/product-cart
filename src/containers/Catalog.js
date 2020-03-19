@@ -3,29 +3,30 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { find, filter } from 'lodash'
 
-import { getProducts, filterProductsFunc } from 'modules/products'
-import { addCart } from 'modules/cart'
+import * as productsActions from 'modules/products'
+import * as cartActions from 'modules/cart'
 
 class Catalog extends Component {
 	componentDidMount() {
-		const { dispatch } = this.props
-		dispatch(getProducts())
+		const { getProducts } = this.props
+		getProducts()
 	}
 
 	addToCart = productId => {
-		const { products, dispatch } = this.props
+		const { products, addCart } = this.props
 		const thisProduct = find(products, { id: productId })
-		dispatch(addCart(thisProduct))
+		addCart(thisProduct)
 	}
 
 	filter = ({ target: { value: filterValue } }) => {
-		const { dispatch } = this.props
+		const { filterProductsFunc } = this.props
 		// not the most elegant solution :)
 		const initialProducts = JSON.parse(localStorage.getItem('initialProducts'))
+		let filterProducts = initialProducts
 		if (initialProducts && initialProducts.length && filterValue !== 'all') {
-			const filterProducts = filter(initialProducts, { category: filterValue })
-			dispatch(filterProductsFunc(filterProducts))
-		} else dispatch(filterProductsFunc(initialProducts))
+			filterProducts = filter(initialProducts, { category: filterValue })
+		}
+		filterProductsFunc(filterProducts)
 	}
 
 	render() {
@@ -35,7 +36,7 @@ class Catalog extends Component {
 		if (products && products.length) {
 			productsDiv = products.map(({ id, name, img, description, tags, price }) => {
 				return (
-					<div className="col-md-4 col-sm-4 product" key={id}>
+					<div className="col-md-4 col-sm-6 product" key={id}>
 						<div className="main-image">
 							<img src={`${process.env.PUBLIC_URL}/img/${img}`} alt={name} />
 						</div>
@@ -55,6 +56,7 @@ class Catalog extends Component {
 					</div>
 				)
 			})
+
 			return (
 				<div className="container-catalog">
 					<div className="row">
@@ -76,11 +78,12 @@ class Catalog extends Component {
 				</div>
 			)
 		}
+
 		return (
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12 col-md-12">
-						<h3 className="text-center">Can not load products</h3>
+						<h3 className="text-center">Loading products...</h3>
 					</div>
 				</div>
 			</div>
@@ -89,7 +92,9 @@ class Catalog extends Component {
 }
 
 Catalog.propTypes = {
-	dispatch: PropTypes.func.isRequired,
+	getProducts: PropTypes.func.isRequired,
+	filterProductsFunc: PropTypes.func.isRequired,
+	addCart: PropTypes.func.isRequired,
 	products: PropTypes.array,
 }
 
@@ -98,4 +103,12 @@ Catalog.defaultProps = {
 }
 
 const mapStateToProps = ({ products }) => ({ products })
-export default connect(mapStateToProps)(Catalog)
+const mapDispatchToProps = {
+	getProducts: productsActions.getProducts,
+	filterProductsFunc: productsActions.filterProductsFunc,
+	addCart: cartActions.addCart,
+}
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Catalog)

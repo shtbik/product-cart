@@ -1,43 +1,27 @@
-import axios from 'axios'
-import { SubmissionError } from 'redux-form'
 import { cloneDeep } from 'lodash'
 
-import { axiosDefaults } from 'configs/core'
 import productsList from 'configs/products'
 
 // CONSTANTS
-export const LOAD_PRODUCTS_REQUEST = 'test/product/LOAD_PRODUCTS_REQUEST'
-export const LOAD_PRODUCTS_RECEIVE = 'test/product/LOAD_PRODUCTS_RECEIVE'
-
-export const FILTER_PRODUCTS_REQUEST = 'test/product/FILTER_PRODUCTS_REQUEST'
-export const FILTER_PRODUCTS_RECEIVE = 'test/product/FILTER_PRODUCTS_RECEIVE'
+export const LOAD_PRODUCTS = 'test/product/LOAD_PRODUCTS'
+export const FILTER_PRODUCTS = 'test/product/FILTER_PRODUCTS'
 
 // ACTIONS
-const axiosInstance = axios.create(axiosDefaults)
-
-// -------SYNC-------
 export const receiveLoad = data => ({
-	type: LOAD_PRODUCTS_RECEIVE,
+	type: LOAD_PRODUCTS,
 	data,
 	receivedAt: Date.now(),
 })
 
 export const receivefilterProducts = data => ({
-	type: FILTER_PRODUCTS_RECEIVE,
+	type: FILTER_PRODUCTS,
 	data,
 	receivedAt: Date.now(),
 })
 
-// -------ASYNC-------
 export function getProducts() {
-	return dispatch => {
-		return axiosInstance
-			.get('/')
-			.then(() => dispatch(receiveLoad(productsList)))
-			.catch(() => {
-				throw new SubmissionError({ _error: `bad_credentials` })
-			})
-	}
+	// TODO: add real data
+	return dispatch => setTimeout(() => dispatch(receiveLoad(productsList)), 2000)
 }
 
 export function filterProductsFunc(newProducts) {
@@ -46,16 +30,17 @@ export function filterProductsFunc(newProducts) {
 
 // REDUCERS
 const initialState = []
+
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
-		case LOAD_PRODUCTS_RECEIVE: {
+		case LOAD_PRODUCTS: {
 			let copyState = cloneDeep(state)
 			localStorage.setItem('initialProducts', JSON.stringify(action.data))
 			copyState = action.data
 			return copyState
 		}
 
-		case FILTER_PRODUCTS_RECEIVE: {
+		case FILTER_PRODUCTS: {
 			let copyState = cloneDeep(state)
 			copyState = action.data
 			return copyState

@@ -1,12 +1,8 @@
 import React from 'react'
 
-import TopNav from 'containers/TopNav'
-import Footer from 'containers/Footer'
-
 const NoMatch = () => {
 	return (
 		<div>
-			<TopNav />
 			<div className="container main-container">
 				<div className="row">
 					<div className="col-sm-12 col-md-12 text-center">
@@ -15,7 +11,6 @@ const NoMatch = () => {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</div>
 	)
 }

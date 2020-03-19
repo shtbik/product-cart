@@ -1,15 +1,11 @@
 import { find, filter, cloneDeep } from 'lodash'
 
 export const ADD_PRODUCT_TO_CART = 'test/cart/ADD_PRODUCT_TO_CART'
-
 export const CHANGE_CART_COUNT = 'test/cart/CHANGE_CART_COUNT'
-
 export const DELETE_CART_ITEM = 'test/cart/DELETE_CART_ITEM'
-
 export const CLEAR_CART = 'test/cart/CLEAR_CART'
 
 // // ACTIONS
-
 export const receiveAddCart = data => ({
 	type: ADD_PRODUCT_TO_CART,
 	data,

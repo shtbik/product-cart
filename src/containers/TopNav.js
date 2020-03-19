@@ -1,15 +1,18 @@
-import React, { useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { clearCart } from 'modules/cart'
+import * as cartActions from 'modules/cart'
 
-const TopNav = ({ cart, dispatch }) => {
+// TODO: move to component, remove redux
+const TopNav = ({ cart, clearCart }) => {
+	const [isCollapsed, toggleCollapse] = useState(true)
+
 	const clearUpdate = () => {
 		localStorage.clear()
-		dispatch(clearCart())
+		clearCart()
 	}
 
 	const commonCount = useMemo(
@@ -22,29 +25,28 @@ const TopNav = ({ cart, dispatch }) => {
 		[cart]
 	)
 
+	const navbarClasses = isCollapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show'
+	const collapseBtnClasses = isCollapsed ? 'navbar-toggler collapsed' : 'navbar-toggler'
+
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
+		<nav className="navbar navbar-expand-sm navbar-light bg-light rounded">
 			<div className="container">
 				<NavLink to="/" className="navbar-brand">
-					LogoCompany
+					ProductsCart
 				</NavLink>
 				<button
-					className="navbar-toggler"
 					type="button"
-					data-toggle="collapse"
-					data-target="#navbarsExample09"
-					aria-controls="navbarsExample09"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
+					onClick={() => toggleCollapse(!isCollapsed)}
+					className={collapseBtnClasses}
 				>
 					<span className="navbar-toggler-icon" />
 				</button>
 
-				<div className="collapse navbar-collapse" id="navbarsExample09">
+				<div className={navbarClasses}>
 					<ul className="navbar-nav mr-auto">
 						<li className="nav-item">
 							<NavLink to="/" onClick={clearUpdate} className="nav-link" activeClassName="on">
-								Clear & Update
+								Clear Cart
 							</NavLink>
 						</li>
 					</ul>
@@ -68,8 +70,13 @@ const TopNav = ({ cart, dispatch }) => {
 
 TopNav.propTypes = {
 	cart: PropTypes.array.isRequired,
-	dispatch: PropTypes.func.isRequired,
+	clearCart: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = ({ cart }) => ({ cart })
-export default connect(mapStateToProps)(TopNav)
+const mapDispatchToProps = { clearCart: cartActions.clearCart }
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(TopNav)

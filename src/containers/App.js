@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { connect } from 'react-redux'
 import { Switch } from 'react-router'
 
 import routers from 'routes'
@@ -25,4 +24,4 @@ const App = () => (
 	</div>
 )
 
-export default connect()(App)
+export default App
