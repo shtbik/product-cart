@@ -1,84 +1,30 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { find, filter } from 'lodash'
 
 import * as productsActions from 'modules/products'
 import * as cartActions from 'modules/cart'
 
-class Catalog extends Component {
-	componentDidMount() {
-		const { getProducts } = this.props
-		getProducts()
-	}
+const Catalog = ({ products, filter, getProducts, filterProducts, addCart }) => {
+	useEffect(() => {
+		if (!products.length) getProducts()
+	}, [products, getProducts])
 
-	addToCart = productId => {
-		const { products, addCart } = this.props
-		const thisProduct = find(products, { id: productId })
+	const addToCart = productId => () => {
+		const thisProduct = products.find(({ id }) => id === productId)
 		addCart(thisProduct)
 	}
 
-	filter = ({ target: { value: filterValue } }) => {
-		const { filterProductsFunc } = this.props
-		// not the most elegant solution :)
-		const initialProducts = JSON.parse(localStorage.getItem('initialProducts'))
-		let filterProducts = initialProducts
-		if (initialProducts && initialProducts.length && filterValue !== 'all') {
-			filterProducts = filter(initialProducts, { category: filterValue })
+	const filterChange = ({ target: { value } }) => {
+		const initialProducts = JSON.parse(localStorage.getItem(productsActions.INITIAL_PRODUCTS_KEY))
+		let nextProducts = initialProducts
+		if (value !== 'all') {
+			nextProducts = nextProducts.filter(({ category }) => category === value)
 		}
-		filterProductsFunc(filterProducts)
+		filterProducts({ products: nextProducts, filter: value })
 	}
 
-	render() {
-		const { products } = this.props
-		let productsDiv = null
-
-		if (products && products.length) {
-			productsDiv = products.map(({ id, name, img, description, tags, price }) => {
-				return (
-					<div className="col-md-4 col-sm-6 product" key={id}>
-						<div className="main-image">
-							<img src={`${process.env.PUBLIC_URL}/img/${img}`} alt={name} />
-						</div>
-						<p className="name">{name}</p>
-						<p>{description}</p>
-						<div className="row">
-							<div className="col-md-6 col-sm-6 tag">
-								<span className="label label-tag">{tags}</span>
-							</div>
-							<div className="col-md-6 col-sm-6 price">
-								<span>{price} $</span>
-							</div>
-						</div>
-						<button className="btn btn-primary" type="button" onClick={() => this.addToCart(id)}>
-							Add to cart
-						</button>
-					</div>
-				)
-			})
-
-			return (
-				<div className="container-catalog">
-					<div className="row">
-						<div className="col-sm-12 col-md-12">
-							<h3 className="text-center">Catalog Products</h3>
-							<div className="filter text-right">
-								Category:&nbsp;
-								<select name="filter" className="form-control" onChange={this.filter}>
-									<option value="all">All</option>
-									<option value="laptop">Laptop</option>
-									<option value="phone">Phone</option>
-								</select>
-							</div>
-							<div className="products">
-								<div className="row">{productsDiv}</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			)
-		}
-
+	if (!products || !products.length)
 		return (
 			<div className="container">
 				<div className="row">
@@ -88,24 +34,64 @@ class Catalog extends Component {
 				</div>
 			</div>
 		)
-	}
+
+	return (
+		<div className="container-catalog">
+			<div className="row">
+				<div className="col-sm-12 col-md-12">
+					<h3 className="text-center">Catalog Products</h3>
+					<div className="filter text-right">
+						Category:&nbsp;
+						<select name="filter" value={filter} className="form-control" onChange={filterChange}>
+							<option value="all">All</option>
+							<option value="laptop">Laptop</option>
+							<option value="phone">Phone</option>
+						</select>
+					</div>
+					<div className="products">
+						<div className="row">
+							{products.map(({ id, name, img, description, tags, price }) => {
+								return (
+									<div className="col-md-4 col-sm-6 product" key={id}>
+										<div className="main-image">
+											<img src={`${process.env.PUBLIC_URL}/img/${img}`} alt={name} />
+										</div>
+										<p className="name">{name}</p>
+										<p>{description}</p>
+										<div className="row">
+											<div className="col-md-6 col-sm-6 tag">
+												<span className="label label-tag">{tags}</span>
+											</div>
+											<div className="col-md-6 col-sm-6 price">
+												<span>{price} $</span>
+											</div>
+										</div>
+										<button className="btn btn-primary" type="button" onClick={addToCart(id)}>
+											Add to cart
+										</button>
+									</div>
+								)
+							})}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
 }
 
 Catalog.propTypes = {
 	getProducts: PropTypes.func.isRequired,
-	filterProductsFunc: PropTypes.func.isRequired,
+	filterProducts: PropTypes.func.isRequired,
 	addCart: PropTypes.func.isRequired,
-	products: PropTypes.array,
+	products: PropTypes.array.isRequired,
+	filter: PropTypes.string.isRequired,
 }
 
-Catalog.defaultProps = {
-	products: [],
-}
-
-const mapStateToProps = ({ products }) => ({ products })
+const mapStateToProps = ({ products: { data: products, filter } }) => ({ products, filter })
 const mapDispatchToProps = {
 	getProducts: productsActions.getProducts,
-	filterProductsFunc: productsActions.filterProductsFunc,
+	filterProducts: productsActions.filterProducts,
 	addCart: cartActions.addCart,
 }
 export default connect(

@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import { createBrowserHistory } from 'history'
 
 import App from 'containers/App'
-import store from 'store'
-
+import { store, persistor } from './store'
 import 'styles/index.scss'
 
 const history = createBrowserHistory({
@@ -16,9 +16,11 @@ const history = createBrowserHistory({
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={syncHistoryWithStore(history, store)} basename={process.env.PUBLIC_URL}>
-			<App />
-		</Router>
+		<PersistGate loading={null} persistor={persistor}>
+			<Router history={syncHistoryWithStore(history, store)} basename={process.env.PUBLIC_URL}>
+				<App />
+			</Router>
+		</PersistGate>
 	</Provider>,
 	document.getElementById('root')
 )

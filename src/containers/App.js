@@ -4,9 +4,9 @@ import { Switch } from 'react-router'
 
 import routers from 'routes'
 
+import Footer from 'components/Footer'
+import DevTools from 'components/DevTools'
 import TopNav from './TopNav'
-import Footer from './Footer'
-import DevTools from './DevTools'
 
 const App = () => (
 	<div>

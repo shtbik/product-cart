@@ -1,18 +1,19 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import { persistStore, persistReducer } from 'redux-persist'
 
-import DevTools from 'containers/DevTools'
-import storageMiddleware from './localStorage'
-import rootReducer from '../modules'
+import DevTools from 'components/DevTools'
+import rootReducer from 'modules'
+import persistConfig from 'configs/persistConfig'
 
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 const middleware = compose(
-	applyMiddleware(thunkMiddleware, storageMiddleware),
+	applyMiddleware(thunkMiddleware),
 	DevTools.instrument()
 )
 
-export default function configureStore(initialState) {
-	const store = createStore(rootReducer, initialState, middleware)
-	if (module.hot) module.hot.accept('../modules', () => store.replaceReducer(require('../modules')))
-
-	return store
+export default () => {
+	const store = createStore(persistedReducer, middleware)
+	const persistor = persistStore(store)
+	return { store, persistor }
 }

@@ -76,6 +76,7 @@ class Cart extends Component {
 										<th>Name</th>
 										<th>Price for one</th>
 										<th>Count</th>
+										<th />
 									</tr>
 								</thead>
 								<tbody>

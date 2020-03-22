@@ -9,19 +9,16 @@ export const CLEAR_CART = 'test/cart/CLEAR_CART'
 export const receiveAddCart = data => ({
 	type: ADD_PRODUCT_TO_CART,
 	data,
-	receivedAt: Date.now(),
 })
 
 export const receiveChangeCartCount = data => ({
 	type: CHANGE_CART_COUNT,
 	data,
-	receivedAt: Date.now(),
 })
 
 export const receiveDeleteCartItem = data => ({
 	type: DELETE_CART_ITEM,
 	data,
-	receivedAt: Date.now(),
 })
 
 export const clearCart = () => ({

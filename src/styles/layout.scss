@@ -29,6 +29,7 @@ body {
 						img {
 							display: block;
 							margin: auto;
+							max-width: 100%;
 						}
 					}
 
@@ -65,6 +66,8 @@ body {
 		}
 
 		.container-cart {
+			overflow-x: scroll;
+
 			h3.text-center {
 				margin-bottom: 40px;
 			}

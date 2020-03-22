@@ -11,7 +11,6 @@ const TopNav = ({ cart, clearCart }) => {
 	const [isCollapsed, toggleCollapse] = useState(true)
 
 	const clearUpdate = () => {
-		localStorage.clear()
 		clearCart()
 	}
 
