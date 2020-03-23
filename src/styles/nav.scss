@@ -1,0 +1,55 @@
+.navbar {
+	.navbar-brand {
+		img {
+			height: 40px;
+		}
+	}
+
+	&.navbar-light {
+		.navbar-nav {
+			.nav-link {
+				cursor: pointer;
+
+				&.on {
+					color: rgba(0, 0, 0, 0.9);
+				}
+			}
+		}
+	}
+
+	.profile-widget {
+		> li {
+			a {
+				color: inherit;
+				cursor: pointer;
+			}
+
+			&:first-child {
+				margin-right: 15px;
+
+				a {
+					padding: 0;
+				}
+			}
+
+			.label-cart {
+				display: inline;
+				margin: 0 5px 0 10px;
+				padding: 0.2em 0.6em 0.3em;
+				line-height: 1;
+				color: #fff;
+				text-align: center;
+				white-space: nowrap;
+				vertical-align: baseline;
+				border-radius: 1em;
+				background-color: #025aa5;
+				border-color: #01549b;
+			}
+		}
+	}
+}
+
+.footer {
+	min-height: 10vh;
+	line-height: 10vh;
+}
