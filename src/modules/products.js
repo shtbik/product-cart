@@ -20,7 +20,7 @@ export const filterProducts = ({ products, filter }) => ({
 })
 
 export function getProducts() {
-	// TODO: add real data
+	// TODO: grab data from https://everyiphone.com ?
 	return dispatch =>
 		setTimeout(() => {
 			localStorage.setItem(INITIAL_PRODUCTS_KEY, JSON.stringify(productsList))
