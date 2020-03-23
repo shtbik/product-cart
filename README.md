@@ -2,9 +2,9 @@
 
 ## UI
 
-![UI example](https://imgur.com/CiraJNC)
+![UI example](https://imgur.com/CiraJNC.png)
 
-![UI example](https://imgur.com/cKfg7fD)
+![UI example](https://imgur.com/cKfg7fD.png)
 
 ## Start project
 
