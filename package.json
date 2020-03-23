@@ -1,6 +1,6 @@
 {
-	"name": "product-cart-new",
-	"version": "0.1.0",
+	"name": "product-cart",
+	"version": "2.0.0",
 	"homepage": "https://shtbik.github.io/product-cart",
 	"private": true,
 	"dependencies": {
