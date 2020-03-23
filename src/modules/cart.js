@@ -6,42 +6,24 @@ export const DELETE_CART_ITEM = 'test/cart/DELETE_CART_ITEM'
 export const CLEAR_CART = 'test/cart/CLEAR_CART'
 
 // // ACTIONS
-export const receiveAddCart = data => ({
+export const addCart = product => ({
 	type: ADD_PRODUCT_TO_CART,
-	data,
+	data: product,
 })
 
-export const receiveChangeCartCount = data => ({
+export const changeCartCount = (newValue, productId) => ({
 	type: CHANGE_CART_COUNT,
-	data,
+	data: { newValue, productId },
 })
 
-export const receiveDeleteCartItem = data => ({
+export const deleteCartItem = productId => ({
 	type: DELETE_CART_ITEM,
-	data,
+	data: productId,
 })
 
 export const clearCart = () => ({
 	type: CLEAR_CART,
 })
-
-export function addCart(product) {
-	return dispatch => {
-		dispatch(receiveAddCart(product))
-	}
-}
-
-export function changeCartCount(newValue, productId) {
-	return dispatch => {
-		dispatch(receiveChangeCartCount({ newValue, productId }))
-	}
-}
-
-export function deleteCartItem(productId) {
-	return dispatch => {
-		dispatch(receiveDeleteCartItem(productId))
-	}
-}
 
 // REDUCERS
 const initialState = []

@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import * as productsActions from 'modules/products'
 import * as cartActions from 'modules/cart'
 
+import Card from 'components/Card'
+
 const Catalog = ({ products, filter, getProducts, filterProducts, addCart }) => {
 	useEffect(() => {
 		if (!products.length) getProducts()
@@ -50,28 +52,14 @@ const Catalog = ({ products, filter, getProducts, filterProducts, addCart }) => 
 					</div>
 					<div className="products">
 						<div className="row">
-							{products.map(({ id, name, img, description, tags, price }) => {
-								return (
-									<div className="col-md-4 col-sm-6 product" key={id}>
-										<div className="main-image">
-											<img src={`${process.env.PUBLIC_URL}/img/${img}`} alt={name} />
-										</div>
-										<p className="name">{name}</p>
-										<p>{description}</p>
-										<div className="row">
-											<div className="col-md-6 col-sm-6 tag">
-												<span className="label label-tag">{tags}</span>
-											</div>
-											<div className="col-md-6 col-sm-6 price">
-												<span>{price} $</span>
-											</div>
-										</div>
-										<button className="btn btn-primary" type="button" onClick={addToCart(id)}>
-											Add to cart
-										</button>
-									</div>
-								)
-							})}
+							{products.map(product => (
+								<Card
+									key={product.id}
+									product={product}
+									addToCart={addToCart}
+									className="col-md-4 col-sm-6 product"
+								/>
+							))}
 						</div>
 					</div>
 				</div>

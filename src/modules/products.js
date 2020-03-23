@@ -5,6 +5,7 @@ import productsList from 'configs/products'
 // CONSTANTS
 export const LOAD_PRODUCTS = 'test/product/LOAD_PRODUCTS'
 export const FILTER_PRODUCTS = 'test/product/FILTER_PRODUCTS'
+
 export const INITIAL_PRODUCTS_KEY = 'initialProductsList'
 
 // ACTIONS
@@ -13,9 +14,9 @@ export const loadAction = data => ({
 	data,
 })
 
-export const filterAction = data => ({
+export const filterProducts = ({ products, filter }) => ({
 	type: FILTER_PRODUCTS,
-	data,
+	data: { data: products, filter },
 })
 
 export function getProducts() {
@@ -25,10 +26,6 @@ export function getProducts() {
 			localStorage.setItem(INITIAL_PRODUCTS_KEY, JSON.stringify(productsList))
 			dispatch(loadAction({ data: productsList }))
 		}, 2000)
-}
-
-export function filterProducts({ products, filter }) {
-	return dispatch => dispatch(filterAction({ data: products, filter }))
 }
 
 // REDUCERS
