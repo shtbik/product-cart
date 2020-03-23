@@ -6,8 +6,7 @@ import { connect } from 'react-redux'
 
 import * as cartActions from 'modules/cart'
 
-// TODO: move to component, remove redux
-const TopNav = ({ cart, clearCart }) => {
+const NavBar = ({ cart, clearCart }) => {
 	const [isCollapsed, toggleCollapse] = useState(true)
 
 	const clearUpdate = () => {
@@ -67,7 +66,7 @@ const TopNav = ({ cart, clearCart }) => {
 	)
 }
 
-TopNav.propTypes = {
+NavBar.propTypes = {
 	cart: PropTypes.array.isRequired,
 	clearCart: PropTypes.func.isRequired,
 }
@@ -78,4 +77,4 @@ const mapDispatchToProps = { clearCart: cartActions.clearCart }
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(TopNav)
+)(NavBar)

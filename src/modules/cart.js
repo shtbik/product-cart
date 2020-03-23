@@ -45,7 +45,6 @@ export default function reducer(state = initialState, action) {
 		case CHANGE_CART_COUNT: {
 			const nextState = cloneDeep(state)
 			const { data } = action
-
 			const thisProduct = find(nextState, { id: Number(data.productId) })
 			if (thisProduct) {
 				thisProduct.count = data.newValue

@@ -6,11 +6,11 @@ import routers from 'routes'
 
 import Footer from 'components/Footer'
 import DevTools from 'components/DevTools'
-import TopNav from './TopNav'
+import NavBar from './NavBar'
 
 const App = () => (
 	<div>
-		<TopNav />
+		<NavBar />
 		<div className="container main-container">
 			<Switch>
 				{routers.map(({ component: Component, exact, path }) => (
